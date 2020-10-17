@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import NavBar from './Components/Layout/Navbar';
+import Dashboard from './Components/Dashboard/Dashboard';
+import ResumeDetails from './Components/ResumeMaker/ResumeDetails';
+import SigninForm from './Components/Auth/SigninForm';
+import SignupForm from './Components/Auth/SignupForm';
+import ResumeForm from './Components/ResumeMaker/ResumeForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <NavBar/>
+        <Switch>
+          <Route exact path="/dashboard" component={Dashboard}/>
+          <Route path="/resume/:id" component={ResumeDetails}/>
+          <Route path="/signup" component={SignupForm}/>
+          <Route path="/signin" component={SigninForm}/>
+          <Route path="/create" component={ResumeForm}/>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
