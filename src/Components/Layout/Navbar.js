@@ -20,7 +20,7 @@ const NavBar = (props)=>{
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div>
-          <Navbar color="dark" dark expand="md">
+          <Navbar fixed="top" color="dark" dark expand="md">
             <NavbarBrand href="/">Resume-Maker</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>

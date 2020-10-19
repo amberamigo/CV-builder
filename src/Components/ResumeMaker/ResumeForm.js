@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ResumeFormUtil from './ResumeFormElements/ResumeFormUtil';
 import { createResume } from '../../Store/actions/resumeActions';
 import { connect } from 'react-redux'; 
 import { Redirect } from 'react-router-dom';
@@ -9,10 +10,9 @@ class ResumeForm extends Component {
 
         if(!this.props.auth.uid) return <Redirect to="/" />
 
-        const resume = {};
         return (
             <div>
-                <button onClick={(e)=>{e.preventDefault(); this.props.createResume(resume)}}>Create</button>
+                <ResumeFormUtil createResume={this.props.createResume}/>
             </div>
         )
     }

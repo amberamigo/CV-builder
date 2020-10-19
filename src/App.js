@@ -12,6 +12,9 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <NavBar/>
+        <br/>
+        <br/>
+        <br/>
         <Switch>
           <Route exact path="/dashboard" component={Dashboard}/>
           <Route path="/resume/:id" component={ResumeDetails}/>

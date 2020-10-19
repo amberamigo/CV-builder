@@ -7,9 +7,9 @@ export const createResume = (resume)=>{
         const authorID = getState().firebase.auth.uid;
 
         firestore.collection('resumes').add({
-            title : 'ResumeNew2',
-            description : 'Newly Added Resume Again',
-            url : 'https://fb2.com',
+            title : 'ResumeNew3',
+            description : 'Newly Added Resume Again2',
+            url : 'https://fb3.com',
             authorFirstName : profile.firstName,
             authorID : authorID,
             createdAt : new Date() 

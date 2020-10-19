@@ -4,26 +4,29 @@ import { Link } from 'react-router-dom';
 
 const ResumeList = (props) => {
     const resumes = props.resume;
-    var resumeArray = [];
-    if(resumes !== null){
-        for(var i in resumes){
-            resumeArray.push({...resumes[i], id : i });
-        }
+    if(resumes.length>0){
+        return (
+            <CardGroup>
+                {resumes && resumes.map( resume => {
+                    return (
+                        <Link to={"/resume/"+resume.id} key={resume.id}>
+                            <Card>
+                                <CardTitle>{resume.title}</CardTitle>
+                                <CardBody>{resume.description}</CardBody>
+                            </Card>
+                        </Link>
+                    );
+                })}
+            </CardGroup>  
+        );
+    }else{
+        return (
+            <div>
+                <h3>No Resumes Yet, Lets Create One.....</h3>
+            </div>
+        );
     }
-    return (
-        <CardGroup>
-            {resumeArray.length>0 && resumeArray.map( resume => {
-                return (
-                    <Link to={"/resume/"+resume.id} key={resume.id}>
-                        <Card>
-                            <CardTitle>{resume.title}</CardTitle>
-                            <CardBody>{resume.description}</CardBody>
-                        </Card>
-                    </Link>
-                );
-            })}
-        </CardGroup>  
-    );
+    
 }
 
 export default ResumeList;

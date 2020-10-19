@@ -17,7 +17,7 @@ const SignedIn = (props) => {
                 <NavLink className="nav-link" to="/create">Create</NavLink>
             </NavItem>
             <NavItem>
-                <NavLink className="nav-link" to="/signin" onClick={props.signOut}>SignOut</NavLink>
+                <NavLink className="nav-link" to="/" onClick={props.signOut}>SignOut</NavLink>
             </NavItem>
             <NavItem>
                 <NavLink to="/" className="nav-link">Hello {(profile) ? profile.firstName : 'User'} !!</NavLink>

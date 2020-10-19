@@ -11,6 +11,8 @@ class Dashboard extends Component {
 
         if(!auth.uid) return <Redirect to="/" />
 
+        if(!resume) return <div><h3>Loading .....</h3></div>
+
         return (
           <div className="container-fluid">
               <div className="row">
@@ -26,16 +28,19 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        resume : state.firestore.data.resumes,
+        resume : state.firestore.ordered['usersResume'],
         auth : state.firebase.auth
     }
 }
 
 export default compose(
     connect(mapStateToProps),
-    firestoreConnect([
-        {
-            collection : 'resumes',
+    firestoreConnect((props)=>[
+        { 
+            collection : 'resumes', 
+            where : [['authorID', '==' , `${props.auth.uid}`]],
+            limit : 10,
+            storeAs : 'usersResume'
         }
     ])
     )(Dashboard);
