@@ -1,4 +1,25 @@
 //import fb from '../../Config/fireConfig'; 
+
+export const signInGoogle = () => {
+    return (dispatch, getState, { getFirebase }) => {
+        const firebase = getFirebase();
+        const firestore = firebase.firestore();
+        const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(googleAuthProvider)
+        .then((resp)=>{
+            return firestore.collection('users').doc(resp.user.uid).set({
+                name : resp.user.displayName
+            });
+        })
+        .then(()=>{
+            dispatch({type : 'LOGIN_SUCCESS'});
+        })
+        .catch((err)=>{
+            dispatch({type : 'LOGIN_ERR', error : err});
+        });
+    }
+}
+
 export const signIn = (credentials) => {
     return (dispatch, getState, {getFirebase})=>{
         const firebase = getFirebase();
@@ -32,8 +53,7 @@ export const signUp = (newUser) => {
         firebase.auth().createUserWithEmailAndPassword(newUser.email, newUser.password)
         .then((resp)=>{
             return firestore.collection('users').doc(resp.user.uid).set({
-                firstName : newUser.firstName,
-                lastName : newUser.lastName
+                name : newUser.name
             });
         })
         .then(()=>{

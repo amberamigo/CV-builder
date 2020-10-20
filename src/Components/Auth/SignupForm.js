@@ -8,8 +8,9 @@ import {
     Button,
     Alert
     } from 'reactstrap';
+import { FacebookLoginButton, GoogleLoginButton } from 'react-social-login-buttons';
 import { connect } from 'react-redux';
-import { signUp } from '../../Store/actions/authActions';
+import { signUp, signInGoogle } from '../../Store/actions/authActions';
 import { Redirect } from 'react-router-dom';
 
 class SignupForm extends Component {
@@ -19,8 +20,7 @@ class SignupForm extends Component {
         this.state = {
             email : '',
             password : '',
-            firstName : '',
-            lastName : ''
+            name : ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -58,17 +58,14 @@ class SignupForm extends Component {
                         <FormText id="my-email">Create A Password (Minimum Length = 6)</FormText>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="firstName">First Name</Label>
-                        <Input type="text" id="firstName" name="firstName" autoComplete="off" aria-describedby="my-firstName" value={this.state.firstName} onChange={(e)=>this.handleChange(e)}></Input>
-                        <FormText id="my-firstName">Enter Your First Name</FormText>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label htmlFor="lastName">Last Name</Label>
-                        <Input type="text" id="lastName" name="lastName" autoComplete="off" aria-describedby="my-lastName" value={this.state.lastName} onChange={(e)=>this.handleChange(e)}></Input>
-                        <FormText id="my-lastName">Enter Your Last Name</FormText>
+                        <Label htmlFor="name">Name</Label>
+                        <Input type="text" id="name" name="name" autoComplete="off" aria-describedby="my-name" value={this.state.name} onChange={(e)=>this.handleChange(e)}></Input>
+                        <FormText id="my-name">Enter Your Name</FormText>
                     </FormGroup>
                     <Button outline color="primary" type="submit">Sign Up</Button>
                 </Form>
+                <GoogleLoginButton onClick={this.props.signInGoogle} />
+                <FacebookLoginButton/>
                 <Alert color="danger" isOpen={this.props.authError}>
                     {this.props.authError}
                 </Alert>
@@ -86,7 +83,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        signUp : (newUser) => dispatch(signUp(newUser))
+        signUp : (newUser) => dispatch(signUp(newUser)),
+        signInGoogle : () => dispatch(signInGoogle())
     }
 }
 

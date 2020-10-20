@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PersonalDetailsForm from './PersonalDetails';
 import EducationDetailsForm from './EducationDetails';
+import ProjectNSkillDetailsForm from './ProjectNSkillDetails';
+import AoiNAchievementsDetailsForm from './AoiNAchievements';
+import TemplateSelectionForm from './TemplateSelection';
+import StagingArea from './StagingArea';
 
 class ResumeFormUtil extends Component {
 
@@ -9,6 +13,8 @@ class ResumeFormUtil extends Component {
 
         this.state = {
             step : 1,
+
+            templateNumber : 1,
 
             firstname : '',
             lastname : '',
@@ -77,9 +83,32 @@ class ResumeFormUtil extends Component {
         });
     }
 
+    selectTemplate = (n) => {
+        if(n<1 || n>4) return;
+        this.setState({
+            templateNumber : n
+        })
+    }
+
     render() {
         switch(this.state.step){
             case 1 : 
+                return (
+                    <div className="App pt-5 mt-5">
+                        <div className="container col-lg-8 mx-auto">
+        
+                            <TemplateSelectionForm
+                                values={this.state}
+                                nextStep={this.nextStep}
+                                prevStep={this.prevStep}
+                                selectTemplate={this.selectTemplate}
+                            />
+                        </div>
+                        <br />
+                    </div>
+                );
+
+            case 2 : 
                 return (
                     <div className="App pt-5 mt-5">
                         <div className="container col-lg-8 mx-auto">
@@ -94,7 +123,8 @@ class ResumeFormUtil extends Component {
                         <br />
                     </div>
                 );
-            case 2 : 
+
+            case 3 : 
                 return (
                     <div className="App pt-5 mt-5">
                         <div className="container col-lg-8 mx-auto">
@@ -109,6 +139,54 @@ class ResumeFormUtil extends Component {
                         <br />
                     </div>
                 );
+
+            case 4 : 
+                return (
+                    <div className="App pt-5 mt-5">
+                        <div className="container col-lg-8 mx-auto">
+        
+                            <ProjectNSkillDetailsForm
+                                values={this.state}
+                                nextStep={this.nextStep}
+                                prevStep={this.prevStep}
+                                handleChange={this.handleChange}
+                            />
+                        </div>
+                        <br />
+                    </div>
+                );
+
+            case 5 : 
+                return (
+                    <div className="App pt-5 mt-5">
+                        <div className="container col-lg-8 mx-auto">
+        
+                            <AoiNAchievementsDetailsForm
+                                values={this.state}
+                                nextStep={this.nextStep}
+                                prevStep={this.prevStep}
+                                handleChange={this.handleChange}
+                            />
+                        </div>
+                        <br />
+                    </div>
+                );
+            
+            case 6 :
+                return (
+                    <div className="App pt-5 mt-5">
+                        <div className="container col-lg-8 mx-auto">
+        
+                            <StagingArea
+                                values={this.state}
+                                nextStep={this.nextStep}
+                                prevStep={this.prevStep}
+                            />
+                        </div>
+                        <br />
+                    </div>
+                );
+
             default : 
                 return (
                     <div>Error :/</div>

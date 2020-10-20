@@ -8,9 +8,9 @@ import {
     Button,
     Alert
     } from 'reactstrap';
-import { FacebookLoginButton, GithubLoginButton } from 'react-social-login-buttons';
+import { FacebookLoginButton, GithubLoginButton, GoogleLoginButton } from 'react-social-login-buttons';
 import { connect } from 'react-redux';
-import { signIn } from '../../Store/actions/authActions';
+import { signIn, signInGoogle } from '../../Store/actions/authActions';
 import { Redirect } from 'react-router-dom';
 
 
@@ -57,7 +57,8 @@ class SigninForm extends Component {
                         <Input type="password" id="password" name="password" autoComplete="off" aria-describedby="my-password" value={this.state.password} onChange={(e)=>this.handleChange(e)}></Input>
                         <FormText id="my-email">Enter Password</FormText>
                     </FormGroup>
-                    <Button color="success" type="submit">Sign In</Button>
+                    <Button outline color="success" type="submit">Sign In</Button>
+                    <GoogleLoginButton onClick={this.props.signInGoogle} />
                     <FacebookLoginButton/>
                     <GithubLoginButton/>
                 </Form>
@@ -78,7 +79,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        signIn : (creds) => dispatch(signIn(creds))
+        signIn : (creds) => dispatch(signIn(creds)),
+        signInGoogle : () => dispatch(signInGoogle())
     }
 }
 

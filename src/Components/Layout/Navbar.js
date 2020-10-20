@@ -26,12 +26,10 @@ const NavBar = (props)=>{
             <Collapse isOpen={isOpen} navbar>
               <Nav className="mr-auto" navbar>
                 <NavItem>
-                  <Link className="nav-link" to="/dashboard">Home</Link>
+                  <Link className="nav-link" to="/dashboard"><i className="fa fa-home"></i> Home</Link>
                 </NavItem>
               </Nav>
-              <Nav navbar>
-                  {links}
-              </Nav>
+              {links}
             </Collapse>
           </Navbar>
         </div>

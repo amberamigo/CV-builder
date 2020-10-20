@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingScreen from '../Layout/LoadingScreen';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -24,7 +25,7 @@ const ResumeDetails = (props) => {
         );
     }else{
         return (
-            <h3>Loading.....</h3>
+            <LoadingScreen/>
         );
     }
 }

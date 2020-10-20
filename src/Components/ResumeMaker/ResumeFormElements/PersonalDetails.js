@@ -99,10 +99,10 @@ class PersonalDetailsForm extends Component {
                 </div>
                 <div className="row text-center">
                     <div className="col-6 col-md-4">
-                        <Button outline color="primary" onClick={(e)=>this.toPrevStep(e)}> - Back</Button>
+                        <Button outline color="primary" onClick={(e)=>this.toPrevStep(e)} size="lg" block><i className="fa fa-chevron-circle-left"></i> Back</Button>
                     </div>
                     <div className="col-6 col-md-4 offset-md-4">
-                        <Button outline color="danger" onClick={(e)=>this.toNextStep(e)}>Next -></Button>
+                        <Button outline color="danger" onClick={(e)=>this.toNextStep(e)} size="lg" block>Next <i className="fa fa-chevron-circle-right"></i></Button>
                     </div>
                 </div>
                 <hr/>
