@@ -5,13 +5,13 @@ import {
     Input,
     Label,
     FormText,
-    Button,
-    Alert
+    Button
     } from 'reactstrap';
 import { FacebookLoginButton, GoogleLoginButton } from 'react-social-login-buttons';
 import { connect } from 'react-redux';
 import { signUp, signInGoogle } from '../../Store/actions/authActions';
 import { Redirect } from 'react-router-dom';
+import MessageDisplay from '../Layout/MessageDisplay';
 
 class SignupForm extends Component {
 
@@ -45,6 +45,7 @@ class SignupForm extends Component {
 
         return (
             <div className="container">
+                {this.props.authError ? <MessageDisplay msg={this.props.authError} /> : null }
                 <Form onSubmit={(e)=>this.handleSubmit(e)}>
                     <h3>Sign Up</h3>
                     <FormGroup>
@@ -66,9 +67,6 @@ class SignupForm extends Component {
                 </Form>
                 <GoogleLoginButton onClick={this.props.signInGoogle} />
                 <FacebookLoginButton/>
-                <Alert color="danger" isOpen={this.props.authError}>
-                    {this.props.authError}
-                </Alert>
             </div>
         );
     }

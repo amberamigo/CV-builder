@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
+import { createResume, previewResume } from '../../../Store/actions/resumeActions';
+import { connect } from 'react-redux';
 
 class StagingArea extends Component {
     toNextStep = (e) => {
@@ -21,9 +23,10 @@ class StagingArea extends Component {
                     <hr />
                 </div>
                 <div className="container-fluid text-center">
+                    Title -      {values.title} <br/>
+                    Description -{values.description} <br/>
                     Template -   {values.templateNumber} <br/><br/>
-                    First Name - {values.firstname} <br/>
-                    Last Name -  {values.lastname} <br/>
+                    Name -       {values.name} <br/>
                     Email -      {values.email} <br/>
                     Phone -      {values.phone} <br/>
                     LinkedIn ID  - {values.linkedin} <br/><br/>
@@ -46,8 +49,11 @@ class StagingArea extends Component {
                     <div className="col-6 col-md-4">
                         <Button outline color="primary" onClick={(e)=>this.toPrevStep(e)} size="lg" block><i className="fa fa-chevron-circle-left"></i> Back</Button>
                     </div>
-                    <div className="col-6 col-md-4 offset-md-4">
-                        <Button outline color="danger" onClick={(e)=>this.toNextStep(e)} size="lg" block disabled>Next <i className="fa fa-chevron-circle-right"></i></Button>
+                    <div className="col-6 col-md-4">
+                        <Button outline color="warning" onClick={()=>this.props.previewResume(values)} size="lg" block>Preview <i className="fa fa-file-text"></i></Button>
+                    </div>
+                    <div className="col-6 col-md-4">
+                        <Button outline color="success" onClick={()=>this.props.createResume(values)} size="lg" block>Create <i className="fa fa-file-text"></i></Button>
                     </div>
                 </div>
                 <hr/>
@@ -56,4 +62,11 @@ class StagingArea extends Component {
     }
 }
 
-export default StagingArea;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createResume : (values) => dispatch(createResume(values)),
+        previewResume : (values) => dispatch(previewResume(values))
+    }
+}
+
+export default connect(null,mapDispatchToProps)(StagingArea);

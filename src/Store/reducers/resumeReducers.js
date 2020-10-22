@@ -1,17 +1,30 @@
 const initState = {
-    resumes : [
-        {id:1, name:'Resume1'},
-        {id:2, name:'Resume2'},
-        {id:3, name:'Resume3'},
-    ]
+    resume : null,
+    isLoading : true, 
+    resumeErr : null
 }
 
 const resumeReducers = (state = initState, actions) => {
     switch(actions.type){
-        case 'CREATE_RESUME' : console.log('Resume Created');
-                                return state;
-        case 'CREATE_RESUME_ERR' : alert('Error In Creating Resume');
-                                    return state;
+        case 'RESUME_CREATED' : alert('Resume Created');
+                                return {
+                                    ...state,
+                                    resume : actions.resume,
+                                    isLoading : false,
+                                    resumeErr : null
+                                };
+        case 'RESUME_LOADING' : return {
+                                    ...state,
+                                    resume : null,
+                                    isLoading : true,
+                                    resumeErr : null
+                                };
+        case 'RESUME_ERR' : return {
+                                    ...state,
+                                    resume : null,
+                                    isLoading : false,
+                                    resumeErr : actions.error 
+                                };
         default : return state;
     }
 }

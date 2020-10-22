@@ -25,31 +25,18 @@ class PersonalDetailsForm extends Component {
                 <div className="container-fluid">
                     <Form>
                         <FormGroup>
-                            <Label htmlFor="firstname">First Name</Label>
+                            <Label htmlFor="username">Name</Label>
                             <Input 
                                 type = "text" 
-                                id = "firstname"
-                                name = "firstname"
+                                id = "username"
+                                name = "name"
                                 autoFocus = "on"
                                 autoComplete = "off"
-                                aria-describedby = "firstname-text"
-                                value = {values.isSubmitted ? '' : values.firstname}
+                                aria-describedby = "username-text"
+                                value = {values.isSubmitted ? '' : values.name}
                                 onChange = {(e)=>handleChange(e)}
                             />
-                            <FormText id="firstname-text">Enter Your First Name</FormText>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label htmlFor="lastname">Last Name</Label>
-                            <Input 
-                                type = "text" 
-                                id = "lastname"
-                                name = "lastname"
-                                autoComplete = "off"
-                                aria-describedby = "lastname-text"
-                                value = {values.isSubmitted ? '' : values.lastname}
-                                onChange = {(e)=>handleChange(e)}
-                            />
-                            <FormText id="lastname-text">Enter Your Last Name</FormText>
+                            <FormText id="name-text">Enter Your Name</FormText>
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="email">Email</Label>

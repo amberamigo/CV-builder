@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PersonalDetailsForm from './PersonalDetails';
 import EducationDetailsForm from './EducationDetails';
 import ProjectNSkillDetailsForm from './ProjectNSkillDetails';
 import AoiNAchievementsDetailsForm from './AoiNAchievements';
 import TemplateSelectionForm from './TemplateSelection';
 import StagingArea from './StagingArea';
+import ResumeScrapForm from './ResumeScrapForm';
 
 class ResumeFormUtil extends Component {
 
@@ -12,12 +14,13 @@ class ResumeFormUtil extends Component {
         super(props);
 
         this.state = {
-            step : 1,
+            step : 0,
 
             templateNumber : 1,
+            title : '',
+            description : '',
 
-            firstname : '',
-            lastname : '',
+            name : '',
             email : '',
             phone : '',
             linkedin : '',
@@ -57,6 +60,7 @@ class ResumeFormUtil extends Component {
 
     nextStep = () => {
         const { step } = this.state;
+        if(step>=6) return;
         this.setState({
             step: step + 1
         });
@@ -64,6 +68,7 @@ class ResumeFormUtil extends Component {
 
     prevStep = () => {
         const { step } = this.state;
+        if(step<=0) return;
         this.setState({
             step: step - 1
         });
@@ -83,6 +88,12 @@ class ResumeFormUtil extends Component {
         });
     }
 
+    changeValue = (key,value) => {
+        this.setState({
+            [key] : value
+        });
+    }
+
     selectTemplate = (n) => {
         if(n<1 || n>4) return;
         this.setState({
@@ -92,16 +103,35 @@ class ResumeFormUtil extends Component {
 
     render() {
         switch(this.state.step){
-            case 1 : 
+            case 0 : 
                 return (
                     <div className="App pt-5 mt-5">
                         <div className="container col-lg-8 mx-auto">
         
                             <TemplateSelectionForm
                                 values={this.state}
+                                handleChange={this.handleChange}
                                 nextStep={this.nextStep}
                                 prevStep={this.prevStep}
                                 selectTemplate={this.selectTemplate}
+                            />
+                        </div>
+                        <br />
+                    </div>
+                );
+            
+            case 1 : 
+                return (
+                    <div className="App pt-5 mt-5">
+                        <div className="container col-lg-8 mx-auto">
+        
+                            <ResumeScrapForm
+                                user={this.props.userProfile.uid ? this.props.userProfile.uid : Math.round(Math.random().toPrecision(5)*10000)} 
+                                values={this.state}
+                                changeValue={this.changeValue}
+                                handleChange={this.handleChange}
+                                nextStep={this.nextStep}
+                                prevStep={this.prevStep}
                             />
                         </div>
                         <br />
@@ -195,4 +225,10 @@ class ResumeFormUtil extends Component {
     }
 }
 
-export default ResumeFormUtil;
+const mapStateToProps = (state) => {
+    return {
+        userProfile : state.firebase.auth
+    }
+}
+
+export default connect(mapStateToProps,null)(ResumeFormUtil);
