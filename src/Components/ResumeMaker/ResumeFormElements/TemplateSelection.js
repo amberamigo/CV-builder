@@ -51,25 +51,25 @@ class TemplateSelectionForm extends Component {
                         </FormGroup>
                         <FormGroup>
                             <CardDeck>
-                                <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{selectTemplate(1); this.toNextStep(e);}}>
+                                <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{if(values.title===''){return;}  selectTemplate(1); this.toNextStep(e);}}>
                                     <CardImg src="public/logo192.png" alt="Template Image"/>
                                     <CardBody>
                                         <CardText>Template 1</CardText>
                                     </CardBody>
                                 </Card>
-                                <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{selectTemplate(2); this.toNextStep(e);}}>
+                                <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{if(values.title===''){return;} selectTemplate(2); this.toNextStep(e);}}>
                                     <CardImg src="public/logo192.png" alt="Template Image"/>
                                     <CardBody>
                                         <CardText>Template 2</CardText>
                                     </CardBody>
                                 </Card>
-                                <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{selectTemplate(3); this.toNextStep(e);}}>
+                                <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{if(values.title===''){return;} selectTemplate(3); this.toNextStep(e);}}>
                                     <CardImg src="public/logo192.png" alt="Template Image"/>
                                     <CardBody>
                                         <CardText>Template 3</CardText>
                                     </CardBody>
                                 </Card>
-                                <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{selectTemplate(4); this.toNextStep(e);}}>
+                                <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{if(values.title===''){return;} selectTemplate(4); this.toNextStep(e);}}>
                                     <CardImg src="public/logo192.png" alt="Template Image"/>
                                     <CardBody>
                                         <CardText>Template 4</CardText>

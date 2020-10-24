@@ -26,7 +26,10 @@ const NavBar = (props)=>{
             <Collapse isOpen={isOpen} navbar>
               <Nav className="mr-auto" navbar>
                 <NavItem>
+                  {auth.uid ? 
+                  <Link className="nav-link" to="/dashboard"><i className="fa fa-tachometer"></i> Dashboard</Link> : 
                   <Link className="nav-link" to="/dashboard"><i className="fa fa-home"></i> Home</Link>
+                }
                 </NavItem>
               </Nav>
               {links}

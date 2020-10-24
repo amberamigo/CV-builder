@@ -1,4 +1,4 @@
-exports.tmpl1 = ({ firstname, lastname, email, phone, linkedin }) => {
+exports.tmpl1 = ({ name, email, phone, linkedin }) => {
     return `
       <!doctype html>
       <html>
@@ -36,8 +36,7 @@ exports.tmpl1 = ({ firstname, lastname, email, phone, linkedin }) => {
           <br/><br/>
           <div class="row text-center">
               <div class="col-lg-6">
-                  <h1><b>${firstname}</b></h1>
-                  <h1><b>${lastname}</b></h1>
+                  <h1><b>${name}</b></h1>
                   <p class="lead email"><strong>Email:</strong> ${email}</p>
                   <p class="lead"><strong>Contact:</strong> (+91)${phone}</p>
                   <p class="lead"><strong>LinkedIn:</strong> ${linkedin}</p>

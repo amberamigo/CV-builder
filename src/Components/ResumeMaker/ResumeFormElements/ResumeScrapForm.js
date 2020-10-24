@@ -15,12 +15,26 @@ const ResumeScrapForm = (props) => {
     const [extracted, setExtracted] = useState(false);
  
     const onChange = (e) => {
+        if(!e.target.files){
+            setMessage('Invalid Input');
+            return;
+        }
+        else if(e.target.files[0].size > 10485760){
+            setMessage('File Size Out Of Range');
+            return;
+        }else{
+            setMessage('');
+        }
         setFile(e.target.files[0]);
         setFileName('File Selected !!');
     }
 
     const onSubmit = (e) => {
         e.preventDefault();
+        if(!file){
+            setMessage('No File Selected');
+            return;
+        }
         const formdata = new FormData();
         formdata.append('file', file);
         formdata.append('user', props.user);
@@ -131,7 +145,7 @@ const ResumeScrapForm = (props) => {
                     </Form>
                     <br/>
                         <Progress animated color="warning" value={uploadPercentage} >
-                            {uploadedFile.fileName ? 'Uploading...'+uploadPercentage+' %' : 'Done 100%'}
+                            {uploadPercentage<100 ? 'Uploading...'+uploadPercentage+' %' : 'Uploaded 100 %'}
                         </Progress>
                     <br/>
                     <div className="row">
@@ -142,7 +156,7 @@ const ResumeScrapForm = (props) => {
                             <br/>
                             {extracting ? <Spinner color="success"/> : null}
                             {extracted ? <Button type="button" outline color="info" onClick={(e)=>toNextStep(e)} block disabled={!uploadedFile.fileName}>
-                                            Some Details Are Filled Now, Continue <i className="fa fa-chevron-circle-right"></i>
+                                            Info Extracted, Continue <i className="fa fa-chevron-circle-right"></i>
                                         </Button> : null 
                             }
                         </div>

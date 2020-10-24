@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardBody, CardGroup } from 'reactstrap';
+import { Card, CardTitle, CardText, CardBody, CardGroup, CardHeader } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 const ResumeList = (props) => {
@@ -11,8 +11,12 @@ const ResumeList = (props) => {
                     return (
                         <Link to={"/resume/"+resume.id} key={resume.id}>
                             <Card>
-                                <CardTitle>{resume.title}</CardTitle>
-                                <CardBody>{resume.description}</CardBody>
+                                <CardHeader>
+                                    <CardTitle>{resume.title}</CardTitle>
+                                </CardHeader>
+                                <CardBody>
+                                    <CardText>{resume.description}</CardText>
+                                </CardBody>
                             </Card>
                         </Link>
                     );

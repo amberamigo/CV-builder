@@ -105,7 +105,7 @@ class ResumeFormUtil extends Component {
         switch(this.state.step){
             case 0 : 
                 return (
-                    <div className="App pt-5 mt-5">
+                    <div className="App pt-3 mt-3">
                         <div className="container col-lg-8 mx-auto">
         
                             <TemplateSelectionForm
@@ -122,7 +122,7 @@ class ResumeFormUtil extends Component {
             
             case 1 : 
                 return (
-                    <div className="App pt-5 mt-5">
+                    <div className="App pt-3 mt-3">
                         <div className="container col-lg-8 mx-auto">
         
                             <ResumeScrapForm
@@ -140,7 +140,7 @@ class ResumeFormUtil extends Component {
 
             case 2 : 
                 return (
-                    <div className="App pt-5 mt-5">
+                    <div className="App pt-3 mt-3">
                         <div className="container col-lg-8 mx-auto">
         
                             <PersonalDetailsForm
@@ -156,7 +156,7 @@ class ResumeFormUtil extends Component {
 
             case 3 : 
                 return (
-                    <div className="App pt-5 mt-5">
+                    <div className="App pt-3 mt-3">
                         <div className="container col-lg-8 mx-auto">
         
                             <EducationDetailsForm
@@ -172,7 +172,7 @@ class ResumeFormUtil extends Component {
 
             case 4 : 
                 return (
-                    <div className="App pt-5 mt-5">
+                    <div className="App pt-3 mt-3">
                         <div className="container col-lg-8 mx-auto">
         
                             <ProjectNSkillDetailsForm
@@ -188,7 +188,7 @@ class ResumeFormUtil extends Component {
 
             case 5 : 
                 return (
-                    <div className="App pt-5 mt-5">
+                    <div className="App pt-3 mt-3">
                         <div className="container col-lg-8 mx-auto">
         
                             <AoiNAchievementsDetailsForm
@@ -204,7 +204,7 @@ class ResumeFormUtil extends Component {
             
             case 6 :
                 return (
-                    <div className="App pt-5 mt-5">
+                    <div className="App pt-3 mt-3">
                         <div className="container col-lg-8 mx-auto">
         
                             <StagingArea

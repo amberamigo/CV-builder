@@ -1,3 +1,4 @@
+import fb from '../../Config/fireConfig';
 import { Template1 } from '../../Config/commonurls';
 const axios = require('axios').default;
 const saveAs = require('file-saver');
@@ -6,10 +7,13 @@ export const createResume = (values)=>{
     return (dispatch, getState, {getFirebase})=>{
         //call to database
         const firestore = getFirebase().firestore();
+        const storageRef = fb.storage();
 
         const profile = getState().firebase.profile;
         const authorID = getState().firebase.auth.uid;
-        const storageURL = 'https://google.com';
+        var storageURL = '';
+        const setStorageUrl = (url) => {storageURL = url}
+        const rndm = Math.floor(Math.random() * Math.floor(100000));
 
         axios.post(Template1+'/', values, {responseType : "blob"} )
         .then((resp)=>{
@@ -19,25 +23,39 @@ export const createResume = (values)=>{
             if(resp.status === 200){
 
                 const pdfBlob = new Blob([resp.data], { type: 'application/pdf' });
+                const uploadTask = storageRef.ref('createdResume/'+values.title+'_'+rndm+'.pdf').put(pdfBlob)
+                uploadTask.on(
+                    'state_changed',
+                    snapshot => {},
+                    error => {console.error(error)},
+                    () => {
+                        storageRef.ref('createdResume')
+                        .child(values.title+'_'+rndm+'.pdf')
+                        .getDownloadURL()
+                        .then((url)=>{
+                            setStorageUrl(url);
+                        })
+                        .then(()=>{
+                            firestore.collection('resumes').add({
+                                title : values.title,
+                                description : values.description,
+                                url : storageURL,
+                                authorName : profile.name,
+                                authorID : authorID,
+                                createdAt : new Date() 
+                            });
+                        })
+                        .catch((err)=>{
+                            console.error(err);
+                        })
+                    }
+                );
+
                 saveAs(pdfBlob, values.title+'.pdf');
 
             }else{
-                throw new Error('Resume Creation Error From Server!!');
+                console.log('Resume Creation Error From Server!!');
             }
-
-        })
-        .then(()=>{
-
-            dispatch({ type : 'RESUME_LOADING' });
-
-            firestore.collection('resumes').add({
-                title : values.title,
-                description : values.description,
-                url : storageURL,
-                authorName : profile.name,
-                authorID : authorID,
-                createdAt : new Date() 
-            });
 
         })
         .then(()=>{

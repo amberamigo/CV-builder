@@ -9,7 +9,7 @@ import {
     } from 'reactstrap';
 import { FacebookLoginButton, GithubLoginButton, GoogleLoginButton } from 'react-social-login-buttons';
 import { connect } from 'react-redux';
-import { signIn, signInGoogle } from '../../Store/actions/authActions';
+import { signIn, signInGoogle, signInGithub, signInFacebook } from '../../Store/actions/authActions';
 import MessageDisplay from '../Layout/MessageDisplay';
 import { Redirect } from 'react-router-dom';
 
@@ -60,8 +60,8 @@ class SigninForm extends Component {
                     </FormGroup>
                     <Button outline color="success" type="submit">Sign In</Button>
                     <GoogleLoginButton onClick={this.props.signInGoogle} />
-                    <FacebookLoginButton/>
-                    <GithubLoginButton/>
+                    <FacebookLoginButton onClick={this.props.signInFacebook}/>
+                    <GithubLoginButton onClick={this.props.signInGithub}/>
                 </Form>
             </div>
         );
@@ -78,7 +78,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         signIn : (creds) => dispatch(signIn(creds)),
-        signInGoogle : () => dispatch(signInGoogle())
+        signInGoogle : () => dispatch(signInGoogle()),
+        signInGithub : () => dispatch(signInGithub()),
+        signInFacebook : () => dispatch(signInFacebook())
     }
 }
 

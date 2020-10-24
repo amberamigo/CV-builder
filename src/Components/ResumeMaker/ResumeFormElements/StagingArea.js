@@ -46,13 +46,13 @@ class StagingArea extends Component {
                     Achievements 2 -     {values.achievements_2} <br/><br/>
                 </div>
                 <div className="row text-center">
-                    <div className="col-6 col-md-4">
+                    <div className="col-12 col-md-4 mx-auto">
                         <Button outline color="primary" onClick={(e)=>this.toPrevStep(e)} size="lg" block><i className="fa fa-chevron-circle-left"></i> Back</Button>
                     </div>
-                    <div className="col-6 col-md-4">
+                    <div className="col-12 col-md-4 mx-auto">
                         <Button outline color="warning" onClick={()=>this.props.previewResume(values)} size="lg" block>Preview <i className="fa fa-file-text"></i></Button>
                     </div>
-                    <div className="col-6 col-md-4">
+                    <div className="col-12 col-md-4 mx-auto">
                         <Button outline color="success" onClick={()=>this.props.createResume(values)} size="lg" block>Create <i className="fa fa-file-text"></i></Button>
                     </div>
                 </div>
