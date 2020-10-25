@@ -37,6 +37,7 @@ class ResumeFormUtil extends Component {
             edu_course_score_2 : '',
 
             project_fields : 1,
+            githubid : '',
             project_name : '',
             project_description : '',
             project_link : '',

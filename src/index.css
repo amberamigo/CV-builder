@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nvbr{
+  background-color: #002266;
+}
+
+.nv-brand{
+  color: azure;
+}
+
+.nv-brand:hover{
+  color: black;
+}
+
+.nav-link{
+  color: azure;
+}
+
+.nav-link:active{
+  color: brown;
+}
+
+.nav-link:hover{
+  color: whitesmoke;
+}

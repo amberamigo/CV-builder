@@ -20,8 +20,9 @@ const NavBar = (props)=>{
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div>
-          <Navbar fixed="top" color="dark" dark expand="md">
-            <NavbarBrand href="/">Resume-Maker</NavbarBrand>
+          <Navbar className="nvbr" fixed="top" expand="md">
+          {/* <img src={process.env.PUBLIC_URL + '/assets/BrandLogo.png'} style={{height:50, width:80}} alt="Logo"></img> */}
+            <NavbarBrand className="nv-brand" href="/">Resume-Maker</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
               <Nav className="mr-auto" navbar>

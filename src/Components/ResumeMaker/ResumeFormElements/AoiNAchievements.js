@@ -89,10 +89,10 @@ class AoiNAchievementsDetailsForm extends Component {
                 </div>
 
                 <div className="row text-center">
-                    <div className="col-6 col-md-4">
+                    <div className="col-6 col-md-4 mx-auto">
                         <Button outline color="primary" onClick={(e)=>this.toPrevStep(e)} size="lg" block><i className="fa fa-chevron-circle-left"></i> Back</Button>
                     </div>
-                    <div className="col-6 col-md-4 offset-md-4">
+                    <div className="col-6 col-md-4 offset-md-4 mx-auto">
                         <Button outline color="danger" onClick={(e)=>this.toNextStep(e)} size="lg" block>Next <i className="fa fa-chevron-circle-right"></i></Button>
                     </div>
                 </div>

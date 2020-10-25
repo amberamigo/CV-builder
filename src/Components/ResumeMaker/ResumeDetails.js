@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import LoadingScreen from 'react-loading-screen';
+import LoadingScreen2 from '../Layout/LoadingScreen2';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -7,32 +8,12 @@ import { Redirect } from 'react-router-dom';
 import { pdfjs, Document, Page } from 'react-pdf';
 import { ProxyURL } from '../../Config/commonurls';
 import { Card, CardTitle, CardText, Button } from 'reactstrap';
-import SpeedDial from '@material-ui/lab/SpeedDial';
-import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
-import SaveIcon from '@material-ui/icons/Save';
-import PrintIcon from '@material-ui/icons/Print';
 
 
 
 const ResumeDetails = (props) => {
 
     const { resume, auth } = props;
-
-    const actions = [
-        { icon: <SaveIcon />, name: 'Save' },
-        { icon: <PrintIcon />, name: 'Print' },
-    ];
-
-    const [open, setOpen] = React.useState(false);
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-    
-    const handleOpen = () => {
-        setOpen(true);
-    };
 
     var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var ww = Math.round( w*(1/3 + 1/20));
@@ -54,22 +35,6 @@ const ResumeDetails = (props) => {
                 <div className="container col-lg-10 mx-auto">
                     <div className="row">
                         <div className="col-10 col-md-4 mx-auto py-4">
-                            <SpeedDial
-                                icon={<SpeedDialIcon />}
-                                onClose={handleClose}
-                                onOpen={handleOpen}
-                                open={open}
-                                direction={'right'}
-                                >
-                                {actions.map((action) => (
-                                    <SpeedDialAction
-                                    key={action.name}
-                                    icon={action.icon}
-                                    tooltipTitle={action.name}
-                                    onClick={handleClose}
-                                    />
-                                ))}
-                            </SpeedDial>
                             <br/>
                             <Card body inverse color="dark">
                                 <CardTitle><h3>Title</h3></CardTitle>
@@ -118,7 +83,7 @@ const ResumeDetails = (props) => {
         );
     }else{
         return (
-            <div></div>
+            <LoadingScreen2/>
         );
     }
 }

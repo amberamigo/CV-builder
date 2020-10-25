@@ -13,6 +13,10 @@ const ResumeScrapForm = (props) => {
     const [uploadPercentage, setUploadPercentage] = useState(0);
     const [extracting, setExtracting] = useState(false);
     const [extracted, setExtracted] = useState(false);
+
+    window.onbeforeunload = () => {
+        return "Form will Reset, Are You Sure ?";
+    }
  
     const onChange = (e) => {
         if(!e.target.files){
@@ -166,12 +170,12 @@ const ResumeScrapForm = (props) => {
                 <hr/>
             </div>
             <div className="row text-center">
-                <div className="col-6 col-md-4">
+                <div className="col-6 col-md-4 mx-auto">
                     <Button outline color="primary" onClick={(e)=>toPrevStep(e)} size="lg" block>
                         <i className="fa fa-chevron-circle-left"></i> Back
                     </Button>
                 </div>
-                <div className="col-6 col-md-4 offset-md-4">
+                <div className="col-6 col-md-4 offset-md-4 mx-auto">
                     <Button outline color="dark" onClick={(e)=>toNextStep(e)} size="lg" block disabled={extracted}>
                         Skip <i className="fa fa-chevron-circle-right"></i>
                     </Button>
