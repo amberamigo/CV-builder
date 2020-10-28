@@ -102,6 +102,26 @@ class ResumeFormUtil extends Component {
         })
     }
 
+    componentDidMount(){
+        if(this.props.userProfile){
+            if(this.props.userProfile.email){
+                this.setState({
+                    name : this.props.userProfile.displayName
+                });
+            }
+            if(this.props.userProfile.email){
+                this.setState({
+                    email : this.props.userProfile.email
+                });
+            }
+            if(this.props.userProfile.phoneNumber){
+                this.setState({
+                    phone : this.props.userProfile.phoneNumber
+                });
+            }
+        }
+    }
+
     render() {
         switch(this.state.step){
             case 0 : 

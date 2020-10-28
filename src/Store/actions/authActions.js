@@ -104,3 +104,32 @@ export const signUp = (newUser) => {
         })
     }
 }
+
+export const verifyEmailLink = () => {
+    return (dispatch, getState, { getFirebase }) => {
+        const firebase = getFirebase();
+        if(firebase.auth().currentUser.emailVerified){
+            return;
+        }
+        firebase.auth().currentUser.sendEmailVerification()
+        .then((resp)=>{
+            dispatch({type : "LINK_SENT"})
+        })
+        .catch((err)=>{
+            dispatch({type : "LINK_ERR", error : err.message})
+        })
+    }
+}
+
+export const passwordResetLink = (emailId) => {
+    return (dispatch, getState, { getFirebase }) => {
+        const firebase = getFirebase();
+        firebase.auth().sendPasswordResetEmail(emailId)
+        .then(()=>{
+            dispatch({type : "PASS_RESLINK_SENT", msg : 'Password Reset Link Sent To Your Email'});
+        })
+        .catch((err)=>{
+            dispatch({type : "PASS_RESLINK_ERR", error : err.message});
+        })
+    }
+}

@@ -9,6 +9,7 @@ class ResumeForm extends Component {
     render() {
 
         if(!this.props.auth.uid) return <Redirect to="/" />
+        if(!this.props.auth.emailVerified) return <Redirect to="/verifyEmail" />
 
         return (
             <div>

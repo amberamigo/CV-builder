@@ -79,7 +79,7 @@ class ProjectNSkillDetailsForm extends Component {
                         <Row>
                             <Col md={6} className="mx-auto">
                                 <FormGroup>
-                                    <Label htmlFor="githubid">Fetch Project Details From <i className="fa fa-github"></i> GitHub</Label>
+                                    <Label htmlFor="githubid">Fetch Project Details From <i className="fa fa-github"></i> GitHub Projects</Label>
                                     <Input 
                                         type = "url" 
                                         id = "githubid"

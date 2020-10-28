@@ -18,10 +18,13 @@ const SignedIn = (props) => {
     const [tooltip2Open, setTooltip2Open] = useState(false);
     const toggleTooltip2 = () => setTooltip2Open(!tooltip2Open);
 
+    const [tooltip3Open, setTooltip3Open] = useState(false);
+    const toggleTooltip3 = () => setTooltip3Open(!tooltip3Open);
+
     return (
         <Nav navbar>
             <NavItem>
-                <NavLink className="nav-link" to="/create" id="createLink"><i className="fa fa-pencil-square-o"></i> Create</NavLink>
+                <NavLink className="nav-link" to="/create" id="createLink"><i className="fa fa-pencil-square-o"></i> Create Resume</NavLink>
             </NavItem>
             <Tooltip placement="auto" isOpen={tooltip1Open} target="createLink" toggle={toggleTooltip1}>
                 Create A New Resume For Your Job Application !! 
@@ -35,8 +38,11 @@ const SignedIn = (props) => {
             </Tooltip>
 
             <NavItem>
-                <NavLink to="/" className="nav-link"><i className="fa fa-user-circle-o"></i> Hello {(profile) ? profile.name : 'User'} !!</NavLink>
+                <NavLink to="/user" className="nav-link" id="userLink"><i className="fa fa-user-circle-o"></i> Hello {(profile) ? profile.name : 'User'} !!</NavLink>
             </NavItem>
+            <Tooltip placement="auto" isOpen={tooltip3Open} target="userLink" toggle={toggleTooltip3}>
+                Your User Account
+            </Tooltip>
         </Nav>
     )
 }

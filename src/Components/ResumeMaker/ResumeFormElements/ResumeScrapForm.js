@@ -158,12 +158,16 @@ const ResumeScrapForm = (props) => {
                                 Extract Info
                             </Button>
                             <br/>
-                            {extracting ? <Spinner color="success"/> : null}
                             {extracted ? <Button type="button" outline color="info" onClick={(e)=>toNextStep(e)} block disabled={!uploadedFile.fileName}>
                                             Info Extracted, Continue <i className="fa fa-chevron-circle-right"></i>
                                         </Button> : null 
                             }
                         </div>
+                        {extracting ?
+                        <div className="col-md-6 mx-auto">
+                             <Spinner color="success"/> 
+                        </div>
+                        : null}
                     </div>
                 </Fragment>
                 <br/>

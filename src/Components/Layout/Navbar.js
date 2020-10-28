@@ -21,9 +21,10 @@ const NavBar = (props)=>{
     return (
         <div>
           <Navbar className="nvbr" fixed="top" expand="md">
-          {/* <img src={process.env.PUBLIC_URL + '/assets/BrandLogo.png'} style={{height:50, width:80}} alt="Logo"></img> */}
-            <NavbarBrand className="nv-brand" href="/">Resume-Maker</NavbarBrand>
-            <NavbarToggler onClick={toggle} />
+            <NavbarBrand href="/">
+              <img src={process.env.PUBLIC_URL + '/BrandLogo4.png'} style={{height:40, width:120}} alt="Logo"></img>
+            </NavbarBrand>
+            <NavbarToggler onClick={toggle} className="nv-toggler" />
             <Collapse isOpen={isOpen} navbar>
               <Nav className="mr-auto" navbar>
                 <NavItem>

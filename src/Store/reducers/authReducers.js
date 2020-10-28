@@ -34,7 +34,26 @@ const authReducer = (state = initState, action) => {
                 ...state,
                 authError : action.error.message,
             };
-
+        case 'LINK_SENT' : 
+            return {
+                ...state,
+                authMsg : 'Verification Link Sent To Your Registered Email'
+            };
+        case 'LINK_ERR' :
+            return {
+                ...state,
+                authMsg : action.error
+            };
+        case 'PASS_RESLINK_SENT' :
+            return {
+                ...state,
+                authError : action.msg
+            };
+        case 'PASS_RESLINK_ERR' :
+            return {
+                ...state,
+                authError : action.error
+            }
         default : return state;
     }
 }

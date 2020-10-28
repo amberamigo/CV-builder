@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ResumeList from '../ResumeMaker/ResumeList';
-import LoadingScreen from '../Layout/LoadingScreen';
+import LoadingScreen2 from '../Layout/LoadingScreen2';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
@@ -12,15 +12,17 @@ class Dashboard extends Component {
 
         if(!auth.uid) return <Redirect to="/" />
 
-        if(!resume) return <LoadingScreen/>
+        if(!this.props.auth.emailVerified) return <Redirect to="/verifyEmail" />
+
+        if(!resume) return <LoadingScreen2/>
 
         return (
           <div className="container-fluid">
               <div className="row">
-                  <div className="col-12 col-md-6">
+                  <div className="col-12 col-md-10 mx-auto">
                       <ResumeList resume = {resume}/>
                   </div>
-                  <div className="col-12 col-md-5 offset-md-1"></div>
+                  <div className="col-12 col-md-2"></div>
               </div>
           </div>  
         );

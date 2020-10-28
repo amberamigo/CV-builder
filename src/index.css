@@ -5,6 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url('/assets/opaqueBackground.png');
+  background-size: 100%;
+  background-position: bottom;
+  background-color: azure;
+  background-blend-mode: luminosity;
+  min-height: 100%;
 }
 
 code {
@@ -21,7 +27,15 @@ code {
 }
 
 .nv-brand:hover{
-  color: black;
+  color: whitesmoke;
+  background-color: #111166;
+}
+
+.nv-toggler{
+  background-size: auto;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3C!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ --%3E%3Cg%3E%3Ctitle%3Ebackground%3C/title%3E%3Crect fill='%23002266' id='canvas_background' height='34' width='34' y='-1' x='-1'/%3E%3C/g%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Cellipse stroke='%23000' ry='4.74996' rx='4.53121' id='svg_1' cy='5.43759' cx='16' fill='%23fff'/%3E%3Cellipse stroke='%23000' ry='4.62496' rx='4.71871' id='svg_2' cy='16.2375' cx='16' fill-opacity='null' stroke-opacity='null' fill='%23fff'/%3E%3Cellipse stroke='%23000' ry='4.53121' rx='4.59371' id='svg_3' cy='26.81241' cx='16' fill-opacity='null' stroke-opacity='null' stroke-width='null' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .nav-link{
@@ -33,5 +47,15 @@ code {
 }
 
 .nav-link:hover{
-  color: whitesmoke;
+  color: slategray;
+}
+
+.res-card{
+  color: black;
+}
+
+.res-card:hover{
+  color: blueviolet;
+  text-decoration: none;
+
 }
