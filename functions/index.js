@@ -3,6 +3,9 @@ const express = require('express');
 const cors = require('cors');
 const htmlPdf = require('html-pdf');
 const tmpl1 = require('./templates/templates').tmpl1;
+const tmpl2 = require('./templates/templates2').tmpl2;
+const tmpl3 = require('./templates/templates3').tmpl3;
+const tmpl4 = require('./templates/templates4').tmpl4;
 
 
 // // Create and Deploy Your First Cloud Functions
@@ -18,7 +21,7 @@ app.use(cors());
 app.post('/previewResume', (request, response)=>{
     try{
         if(request.body.templateNumber){
-            const htmlFilePreview = tmpl1(request.body);
+            const htmlFilePreview = tmpl4(request.body);
             response.contentType('text/html');
             response.statusCode = 200;
             response.send(htmlFilePreview);
@@ -28,15 +31,15 @@ app.post('/previewResume', (request, response)=>{
         }
     }catch(err){
         response.statusCode = 404;
-        response.send('Error In Loading Preiview');
+        response.send(err.message);
     }
 });
 
 app.post('/', (request, response) => {
     try{
         if(request.body.templateNumber){
-            const htmlFile = tmpl1(request.body);
-            htmlPdf.create(htmlFile, {"format" : "A4"}).toStream((err, Stream)=>{
+            const htmlFile = tmpl4(request.body);
+            htmlPdf.create(htmlFile).toStream((err, Stream)=>{
                 if(err){
                     throw new Error('Error In Creating PDF');
                 }else{
