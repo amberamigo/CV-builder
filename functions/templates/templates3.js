@@ -2470,57 +2470,49 @@ exports.tmpl3 = ({ name, email, phone, linkedin, address, github,
                         </style>
                     </head>
                     <body>
-                        <div class="container-fluid" style="margin-top: 1cm; margin-left: 1cm; margin-right: 1cm; margin-bottom: 1cm;">
+                        <div class="container-fluid" style="margin-top: 1cm; margin-left: 0.1cm; margin-right: 0.1cm; margin-bottom: 1cm;">
                             <div class="row" style="background-color: rgb(255, 255, 215);">
-                                <div class="col-12 mx-auto text-center" style="margin-top:0.4cm; margin-bottom:0.4cm;">
+                                <div class="col-12 mx-auto text-center" style="margin-top:0.2cm; margin-bottom:0.2cm;">
                                     <br/>
-                                    <strong><h1 class="display-2" style="color: #493000; "> ${name} </h1></strong>
+                                    <strong><h3 class="display-3" style="color: #493000; "> ${name} </h3></strong>
                                     <br/>
                                 </div>
                             </div>
                             <hr/>
                             <hr/>
                             <br/>
-                            <br/>
                             <div class="row">
                                 <div class="col-12">
                                     <table class="table table-light">
                                         <thead>
                                             <tr>
-                                                <th scope="col"><h1 class="font-italic" style="color: #ffd000;">Personal</h1></th>
+                                                <th scope="col"><h4 class="font-italic" style="color: #ffd000;">Personal</h4></th>
                                                 <th scope="col"></th>
-                                                <th scope="col"><h3 class="display-4 font-weight-bolder font-italic" style="color: #ffd000;">Education</h3></th>
+                                                <th scope="col"><h3 class="font-weight-bolder font-italic" style="color: #ffd000;">Education</h3></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row"></td>
+                                                <td scope="row"><h6>${email}</h6></td>
                                                 <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><h3>${email}</h3></td>
-                                                <td></td>
-                                                <td><h3>${edu_course_year_1}</h3></td>
-                                                <td><h3 class="font-weight-bolder">: ${edu_institute_name_1}</h3></td>
+                                                <td><h6>${edu_course_year_1}</h6></td>
+                                                <td><h5 class="font-weight-bolder">: ${edu_institute_name_1}</h5></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
-                                                <td scope="row"><h3>${phone}</h3></td>
+                                                <td scope="row"><h6>${phone}</h6></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td><h3>${edu_course_name_1}</h3></td>
+                                                <td><h6>${edu_course_name_1}</h6></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
-                                                <td scope="row"><h3>${address}</h3></td>
+                                                <td scope="row"><h6>${address}</h6></td>
                                                 <td></td>
-                                                <td><h3>Scrore</h3></td>
-                                                <td><h3>${edu_course_score_1}</h3></td>
+                                                <td><h6>Score</h6></td>
+                                                <td><h6>${edu_course_score_1}</h6></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
@@ -2531,171 +2523,122 @@ exports.tmpl3 = ({ name, email, phone, linkedin, address, github,
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
-                                                <td scope="row"><h3>${linkedin}</h3></td>
+                                                <td scope="row"><h6>${linkedin}</h6></td>
                                                 <td></td>
-                                                <td><h3>${edu_course_year_2}</h3></td>
-                                                <td><h3 class="font-weight-bolder">: ${edu_institute_name_2}</h3></td>
+                                                <td><h6>${edu_course_year_2}</h6></td>
+                                                <td><h5 class="font-weight-bolder">: ${edu_institute_name_2}</h5></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
-                                                <td scope="row"><h3>${github}</h3></td>
+                                                <td scope="row"><h6>${github}</h6></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td><h3>${edu_course_name_2}</h3></td>
-                                                <td scope="row"></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"></td>
-                                                <td></td>
-                                                <td><h3>Scrore</h3></td>
-                                                <td><h3>${edu_course_score_2}</h3></td>
+                                                <td><h6>${edu_course_name_2}</h6></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
                                                 <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
+                                                <td></td>
+                                                <td><h6>Score</h6></td>
+                                                <td><h6>${edu_course_score_2}</h6></td>
                                                 <td scope="row"></td>
                                             </tr>
                                         </tbody>
                                         <thead>
                                             <tr>
-                                                <th scope="col"><h1 class="font-italic" style="color: #ffd000;">Skills</h1></th>
+                                                <th scope="col"><h4 class="font-italic" style="color: #ffd000;">Skills</h4></th>
                                                 <th scope="col"></th>
-                                                <th scope="col"><h3 class="display-4 font-weight-bolder font-italic" style="color: #ffd000;">Experience</h3></th>
+                                                <th scope="col"><h3 class="font-weight-bolder font-italic" style="color: #ffd000;">Experience</h3></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><h3>${skills_name_1}</h3></td>
+                                                <td scope="row"><h6>${skills_name_1}</h6></td>
                                                 <td></td>
-                                                <td><h3>${exp_start_date_1}</h3></td>
-                                                <td><h3 class="font-weight-bolder">: ${exp_company_name_1}</h3></td>
+                                                <td><h6>${exp_start_date_1}</h6></td>
+                                                <td><h5 class="font-weight-bolder">: ${exp_company_name_1}</h5></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
-                                                <td scope="row"><h3>${skills_name_2}</h3></td>
+                                                <td scope="row"><h6>${skills_name_2}</h6></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
+                                                <td scope="row"><h6>${skills_name_3}</h6></td>
+                                                <td></td>
+                                                <td><h6>${exp_end_date_1}</h6></td>
+                                                <td><h6>${exp_job_profile_1}</h6></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
-                                                <td scope="row"><h3>${skills_name_3}</h3></td>
-                                                <td></td>
-                                                <td><h3>${exp_end_date_1}</h3></td>
-                                                <td><h3>${exp_job_profile_1}</h3></td>
-                                                <td scope="row"></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><h3>${skills_name_4}</h3></td>
+                                                <td scope="row"><h6>${skills_name_4}</h6></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td scope="row"></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
                                                 <td scope="row"></td>
                                             </tr>
                                         </tbody>
                                         <thead>
                                             <tr>
-                                                <th scope="col"><h1 class="font-italic" style="color: #ffd000;">Areas Of Interest</h1></th>
+                                                <th scope="col"><h4 class="font-italic" style="color: #ffd000;">Areas Of Interest</h4></th>
                                                 <th scope="col"></th>
-                                                <th scope="col"><h3 class="display-4 font-weight-bolder font-italic" style="color: #ffd000;">Projects</h3></th>
+                                                <th scope="col"><h3 class="font-weight-bolder font-italic" style="color: #ffd000;">Projects</h3></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><h3>${areas_of_interest_1}</h3></td>
+                                                <td scope="row"><h6>${areas_of_interest_1}</h6></td>
                                                 <td></td>
-                                                <td><h3 class="font-weight-bolder">: ${project_name_1}</h3></td>
+                                                <td><h5 class="font-weight-bolder">: ${project_name_1}</h5></td>
                                                 <td></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
-                                                <td scope="row"><h3>${areas_of_interest_2}</h3></td>
+                                                <td scope="row"><h6>${areas_of_interest_2}</h6></td>
                                                 <td></td>
-                                                <td><h3>${project_description_1}</h3></td>
+                                                <td><h6>${project_description_1}</h6></td>
                                                 <td></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
                                                 <td scope="row"></td>
                                                 <td scope="row"></td>
-                                                <td scope="row"><h3>${project_link_1}</h3></td>
+                                                <td scope="row"><h6>${project_link_1}</h6></td>
                                                 <td scope="row"></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
-                                                <th scope="col"><h1 class="font-italic" style="color: #ffd000;">Achievements</h1></th>
+                                                <th scope="col"><h4 class="font-italic" style="color: #ffd000;">Achievements</h4></th>
                                                 <td scope="row"></td>
                                                 <td spope="row"></td>
                                                 <td scope="row"></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><h3>${achievements_1}</h3></td>
+                                                <td scope="row"><h6>${achievements_1}</h6></td>
                                                 <td></td>
-                                                <td><h3 class="font-weight-bolder">: ${project_name_2}</h3></td>
+                                                <td><h5 class="font-weight-bolder">: ${project_name_2}</h5></td>
                                                 <td></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
-                                                <td scope="row"><h3>${achievements_2}</h3></td>
+                                                <td scope="row"><h6>${achievements_2}</h6></td>
                                                 <td></td>
-                                                <td><h3>${project_description_2}</h3></td>
+                                                <td><h6>${project_description_2}</h6></td>
                                                 <td></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
                                                 <td scope="row"></td>
                                                 <td scope="row"></td>
-                                                <td scope="row"><h3>${project_link_2}</h3></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
-                                                <td scope="row"></td>
+                                                <td scope="row"><h6>${project_link_2}</h6></td>
                                                 <td scope="row"></td>
                                                 <td scope="row"></td>
                                             </tr>

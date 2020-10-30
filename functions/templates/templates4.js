@@ -2470,33 +2470,32 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                         </style>
                     </head>
                     <body>
-                        <div class="container-fluid" style="margin-top: 0.5cm; margin-left: 1cm; margin-right: 1cm; margin-bottom: 0.5cm;">
+                        <div class="container-fluid" style="margin-top: 0.5cm; margin-left: 0.1cm; margin-right: 0.1cm; margin-bottom: 0.5cm;">
                             <div class="row">
-                                <div class="col-12 mx-auto" style="margin-top:0.4cm; margin-bottom:0.4cm;">
+                                <div class="col-12 mx-auto" style="margin-top:0.1cm; margin-bottom:0.1cm;">
                                     <br/>
                                     <table class="table table-dark table-striped">
                                         <tbody>
                                             <tr>
-                                                <th scope="col" rowspan="6" class="text-uppercase"><h2 class="display-2 my-auto">${name}</h2></th>
+                                                <th scope="col" rowspan="6" class="text-uppercase"><h4 class="display-4 my-auto">${name}</h4></th>
                                             </tr>
                                             <tr>
-                                                <td scople="col"><h3>${email}</h3></td>
+                                                <td scople="col"><h6>${email}</h6></td>
                                             </tr>
                                             <tr>
-                                                <td scople="col"><h3>${phone}</h3></td>
+                                                <td scople="col"><h6>${phone}</h6></td>
                                             </tr>
                                             <tr>
-                                                <td scople="col"><h3>${address}</h3></td>
+                                                <td scople="col"><h6>${address}</h6></td>
                                             </tr>
                                             <tr>
-                                                <td scople="col"><h3>${linkedin}</h3></td>
+                                                <td scople="col"><h6>${linkedin}</h6></td>
                                             </tr>
                                             <tr>
-                                                <td scople="col"><h3>${github}</h3></td>
+                                                <td scople="col"><h6>${github}</h6></td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <br/>
                                 </div>
                             </div>
                             <hr/>
@@ -2505,7 +2504,7 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                                     <table class="table table-light">
                                         <thead>
                                             <tr>
-                                                <th scope="col"><h3 class="display-4 font-italic" style="color: #46404b;">EXPERIENCE</h3></th>
+                                                <th scope="col"><h4 class="font-italic font-weight-bolder" style="color: #46404b;">EXPERIENCE</h4></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
@@ -2513,19 +2512,13 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row"><h3>${exp_start_date_1}</h3></td>
-                                                <td><h3 class="font-weight-bolder text-right">: ${exp_company_name_1}</h3></td>
+                                                <td scope="row"><h6>${exp_start_date_1}</h6></td>
+                                                <td><h5 class="font-weight-bolder text-right">: ${exp_company_name_1}</h5></td>
                                                 <td></td>
-                                                <td><h3>${exp_job_profile_1}</h3></td>
+                                                <td><h6>${exp_job_profile_1}</h6></td>
                                             </tr>
                                             <tr>
-                                                <td scope="row"><h3>${exp_end_date_1}</h3></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"></td>
+                                                <td scope="row"><h6>${exp_end_date_1}</h6></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
@@ -2533,7 +2526,7 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                                         </tbody>
                                         <thead>
                                             <tr>
-                                                <th scope="col"><h3 class="display-4 font-italic" style="color: #46404b;">EDUCATION</h3></th>
+                                                <th scope="col"><h4 class="font-italic font-weight-bolder" style="color: #46404b;">EDUCATION</h4></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
@@ -2541,45 +2534,33 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row"><h3>${edu_course_year_1}</h3></td>
-                                                <td><h3 class="font-weight-bolder text-right">: ${edu_institute_name_1}</h3></td>
+                                                <td scope="row"><h6>${edu_course_year_1}</h6></td>
+                                                <td><h5 class="font-weight-bolder text-right">: ${edu_institute_name_1}</h5></td>
                                                 <td></td>
-                                                <td><h3>Score- ${edu_course_score_1}</h3></td>
+                                                <td><h6>Score- ${edu_course_score_1}</h6></td>
                                             </tr>
                                             <tr>
                                                 <td scope="row"></td>
-                                                <td><h3 class="text-right">${edu_course_name_1}</h3></td>
+                                                <td><h6 class="text-right">${edu_course_name_1}</h6></td>
                                                 <td></td>
                                                 <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row"><h6>${edu_course_year_2}</h6></td>
+                                                <td><h5 class="font-weight-bolder text-right">: ${edu_institute_name_2}</h5></td>
+                                                <td></td>
+                                                <td><h6>Score- ${edu_course_score_2}</h6></td>
                                             </tr>
                                             <tr>
                                                 <td scope="row"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"><h3>${edu_course_year_2}</h3></td>
-                                                <td><h3 class="font-weight-bolder text-right">: ${edu_institute_name_2}</h3></td>
-                                                <td></td>
-                                                <td><h3>Score- ${edu_course_score_2}</h3></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"></td>
-                                                <td><h3 class="text-right">${edu_course_name_2}</h3></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"></td>
-                                                <td></td>
+                                                <td><h6 class="text-right">${edu_course_name_2}</h6></td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
                                         </tbody>
                                         <thead>
                                             <tr>
-                                                <th scope="col"><h3 class="display-4 font-italic" style="color: #46404b;">PROJECTS</h3></th>
+                                                <th scope="col"><h4 class="font-italic font-weight-bolder" style="color: #46404b;">PROJECTS</h4></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
@@ -2588,44 +2569,32 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                                         <tbody>
                                             <tr>
                                                 <td scope="row"></td>
-                                                <td><h3 class="font-weight-bolder text-right">: ${project_name_1}</h3></td>
+                                                <td><h5 class="font-weight-bolder text-right">: ${project_name_1}</h5></td>
                                                 <td></td>
-                                                <td><h3>${project_link_1}</h3></td>
+                                                <td><h6>${project_link_1}</h6></td>
                                             </tr>
                                             <tr>
                                                 <td scope="row"></td>
-                                                <td><h3 class="text-right">${project_description_1}</h3></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"></td>
-                                                <td></td>
+                                                <td><h6 class="text-right">${project_description_1}</h6></td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
                                             <tr>
                                                 <td scope="row"></td>
-                                                <td><h3 class="font-weight-bolder text-right">: ${project_name_2}</h3></td>
+                                                <td><h5 class="font-weight-bolder text-right">: ${project_name_2}</h5></td>
                                                 <td></td>
-                                                <td><h3>${project_link_2}</h3></td>
+                                                <td><h6>${project_link_2}</h6></td>
                                             </tr>
                                             <tr>
                                                 <td scope="row"></td>
-                                                <td><h3 class="text-right">${project_description_2}</h3></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"></td>
-                                                <td></td>
+                                                <td><h6 class="text-right">${project_description_2}</h6></td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
                                         </tbody>
                                         <thead>
                                             <tr>
-                                                <th scope="col"><h3 class="display-4 font-italic" style="color: #46404b;">SKILLS</h3></th>
+                                                <th scope="col"><h4 class="font-italic font-weight-bolder" style="color: #46404b;">SKILLS</h4></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
@@ -2633,21 +2602,15 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row"><h3 class="font-weight-bolder">${skills_name_1}</h3></td>
-                                                <td scope="row"><h3 class="font-weight-bolder">${skills_name_2}</h3></td>
-                                                <td scope="row"><h3 class="font-weight-bolder">${skills_name_3}</h3></td>
-                                                <td scope="row"><h3 class="font-weight-bolder">${skills_name_4}</h3></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td scope="row"><h6 class="text-center">${skills_name_1}</h6></td>
+                                                <td scope="row"><h6 class="text-center">${skills_name_2}</h6></td>
+                                                <td scope="row"><h6 class="text-center">${skills_name_3}</h6></td>
+                                                <td scope="row"><h6 class="text-center">${skills_name_4}</h6></td>
                                             </tr>
                                         </tbody>
                                         <thead>
                                             <tr>
-                                                <th scope="col"><h3 class="display-4 font-italic" style="color: #46404b;">AREAS OF INTEREST</h3></th>
+                                                <th scope="col"><h4 class="font-italic font-weight-bolder" style="color: #46404b;">AREAS OF INTEREST</h4></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
@@ -2655,21 +2618,15 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row"><h3 class="font-weight-bolder">${areas_of_interest_1}</h3></td>
+                                                <td scope="row"><h6 class="text-center">${areas_of_interest_1}</h6></td>
                                                 <td scope="row"></td>
-                                                <td scope="row"><h3 class="font-weight-bolder">${areas_of_interest_2}</h3></td>
+                                                <td scope="row"><h6 class="text-center">${areas_of_interest_2}</h6></td>
                                                 <td scope="row"></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
                                             </tr>
                                         </tbody>
                                         <thead>
                                             <tr>
-                                                <th scope="col"><h3 class="display-4 font-italic" style="color: #46404b;">ACHIEVEMENTS</h3></th>
+                                                <th scope="col"><h4 class="font-italic font-weight-bolder" style="color: #46404b;">ACHIEVEMENTS</h4></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
                                                 <th scope="col"></th>
@@ -2677,16 +2634,10 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row"><h3 class="font-weight-bolder">${achievements_1}</h3></td>
+                                                <td scope="row"><h6 class="text-center">${achievements_1}</h6></td>
                                                 <td scope="row"></td>
-                                                <td scope="row"><h3 class="font-weight-bolder">${achievements_2}</h3></td>
+                                                <td scope="row"><h6 class="text-center">${achievements_2}</h6></td>
                                                 <td scope="row"></td>
-                                            </tr>
-                                            <tr>
-                                                <td scope="row"></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
                                             </tr>
                                         </tbody>
                                     </table>
