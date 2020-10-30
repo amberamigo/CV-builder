@@ -7,6 +7,7 @@ import AoiNAchievementsDetailsForm from './AoiNAchievements';
 import TemplateSelectionForm from './TemplateSelection';
 import StagingArea from './StagingArea';
 import ResumeScrapForm from './ResumeScrapForm';
+import { FadeTransform } from 'react-animation-components';
 
 class ResumeFormUtil extends Component {
 
@@ -25,6 +26,7 @@ class ResumeFormUtil extends Component {
             phone : '',
             linkedin : '',
             address : '',
+            github : '',
 
             edu_fields : 2,
             edu_institute_name_1 : '',
@@ -36,16 +38,25 @@ class ResumeFormUtil extends Component {
             edu_course_year_2 : '',
             edu_course_score_2 : '',
 
-            project_fields : 1,
-            githubid : '',
-            project_name : '',
-            project_description : '',
-            project_link : '',
+            exp_fields : 1,
+            exp_company_name_1 : '',
+            exp_job_profile_1 : '',
+            exp_start_date_1 : '',
+            exp_end_date_1 : '',
 
-            skills_fields : 3,
+            project_fields : 2,
+            project_name_1 : '',
+            project_description_1 : '',
+            project_link_1 : '',
+            project_name_2 : '',
+            project_description_2 : '',
+            project_link_2 : '',
+
+            skills_fields : 4,
             skills_name_1 : '',
             skills_name_2 : '',
             skills_name_3 : '',
+            skills_name_4 : '',
 
             areas_of_interest_fields : 2,
             areas_of_interest_1 : '',
@@ -126,9 +137,18 @@ class ResumeFormUtil extends Component {
         switch(this.state.step){
             case 0 : 
                 return (
+                    <FadeTransform
+                        duration={200} 
+                        in
+                        transformProps={{
+                            exitTransform: 'translateX(100px)'
+                        }}
+                        fadeProps={{
+                            enterOpacity: 0.9,
+                        }}
+                    >
                     <div className="App pt-3 mt-3">
                         <div className="container col-lg-8 mx-auto">
-        
                             <TemplateSelectionForm
                                 values={this.state}
                                 handleChange={this.handleChange}
@@ -139,6 +159,7 @@ class ResumeFormUtil extends Component {
                         </div>
                         <br />
                     </div>
+                    </FadeTransform>
                 );
             
             case 1 : 

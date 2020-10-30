@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardTitle, CardText, CardBody, CardDeck, CardHeader, CardFooter, CardImg, Col, Row, Badge } from 'reactstrap';
+import { Card, CardText, CardDeck, CardImg, Col, Row, Badge } from 'reactstrap';
+import ResumeCard from '../Layout/ResumeCard'; 
 import { Link } from 'react-router-dom';
 
 const ResumeList = (props) => {
@@ -11,18 +12,7 @@ const ResumeList = (props) => {
                     var createdAt = new Date(resume.createdAt.seconds*1000 + resume.createdAt.nanoseconds/1000000).toDateString();
                     return (
                         <Link className="res-card" to={"/resume/"+resume.id} key={resume.id}>
-                            <Card style={{height:200, width:250, marginTop:5}}>
-                                <CardHeader> </CardHeader>
-                                <CardBody>
-                                    <strong>
-                                        <CardTitle>{resume.title}</CardTitle>
-                                    </strong>
-                                    <CardText>{resume.description}</CardText>
-                                </CardBody>
-                                <CardFooter>
-                                    {createdAt}
-                                </CardFooter>
-                            </Card>
+                            <ResumeCard title={resume.title} description={resume.description} createdAt={createdAt} />
                         </Link>
                     );
                 })}

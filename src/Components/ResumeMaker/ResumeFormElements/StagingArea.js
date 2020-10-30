@@ -4,6 +4,7 @@ import { createResume, previewResume } from '../../../Store/actions/resumeAction
 import { connect } from 'react-redux';
 
 class StagingArea extends Component {
+
     toNextStep = (e) => {
         e.preventDefault();
         this.props.nextStep();
@@ -14,7 +15,28 @@ class StagingArea extends Component {
         this.props.prevStep();
     }
     render() {
+
         const { values } = this.props;
+
+        var templateName = '';
+        switch(values.templateNumber){
+            case 1 : 
+                    templateName = 'Beginner A';
+                    break;
+            case 2 : 
+                    templateName = 'Professional A';
+                    break;
+            case 3 :
+                    templateName = 'Professional B';
+                    break;
+            case 4 : 
+                    templateName = 'Professional C';
+                    break;
+            default :
+                    templateName = 'Professional A';
+                    break;
+        }
+
         return (
             <div className="card animated fadeInLeft">
 
@@ -41,7 +63,7 @@ class StagingArea extends Component {
                             </tr>
                             <tr>
                                 <th scope="row">Template</th>
-                                <td>No. {values.templateNumber}</td>
+                                <td>{templateName}</td>
                             </tr>
                         </tbody>
                         <hr/>
@@ -72,6 +94,10 @@ class StagingArea extends Component {
                                 <th scope="row">Address</th>
                                 <td>{values.address}</td>
                             </tr>
+                            <tr>
+                                <th scope="row">GitHub ID</th>
+                                <td>{values.github}</td>
+                            </tr>
                         </tbody>
                         <hr/>
                         <thead className="thead-light">
@@ -82,16 +108,61 @@ class StagingArea extends Component {
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">Institute Name</th>
+                                <th scope="row">Institute Name 1</th>
                                 <td>{values.edu_institute_name_1}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Course Name</th>
+                                <th scope="row">Course Name 1</th>
                                 <td>{values.edu_course_name_1}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Year</th>
+                                <th scope="row">Year 1</th>
+                                <td>{values.edu_course_year_1}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Score 1</th>
                                 <td>{values.edu_course_score_1}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Institute Name 2</th>
+                                <td>{values.edu_institute_name_2}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Course Name 2</th>
+                                <td>{values.edu_course_name_2}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Year 2</th>
+                                <td>{values.edu_course_year_2}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Score 2</th>
+                                <td>{values.edu_course_score_2}</td>
+                            </tr>
+                        </tbody>
+                        <hr/>
+                        <thead className="thead-light">
+                            <tr>
+                                <th scope="col">Experience</th>
+                                <th scope="col"> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Company Name</th>
+                                <td>{values.exp_company_name_1}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Job Profile Name</th>
+                                <td>{values.exp_job_profile_1}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Start Date</th>
+                                <td>{values.exp_start_date_1}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">End Date</th>
+                                <td>{values.exp_end_date_1}</td>
                             </tr>
                         </tbody>
                         <hr/>
@@ -103,16 +174,28 @@ class StagingArea extends Component {
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">Project Title</th>
-                                <td>{values.project_name}</td>
+                                <th scope="row">Project Title 1</th>
+                                <td>{values.project_name_1}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Project Description</th>
-                                <td>{values.project_description}</td>
+                                <th scope="row">Project Description 1</th>
+                                <td>{values.project_description_1}</td>
                             </tr>
                             <tr>
-                                <th scope="row">Project Link</th>
-                                <td>{values.project_link}</td>
+                                <th scope="row">Project Link 1</th>
+                                <td>{values.project_link_1}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Project Title 2</th>
+                                <td>{values.project_name_2}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Project Description 2</th>
+                                <td>{values.project_description_2}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Project Link 2</th>
+                                <td>{values.project_link_2}</td>
                             </tr>
                         </tbody>
                         <hr/>
@@ -134,6 +217,11 @@ class StagingArea extends Component {
                             <tr>
                                 <th scope="row">Skill 3</th>
                                 <td>{values.skills_name_3}</td>
+                            </tr>
+                            
+                            <tr>
+                                <th scope="row">Skill 4</th>
+                                <td>{values.skills_name_4}</td>
                             </tr>
                         </tbody>
                         <hr/>
@@ -180,7 +268,7 @@ class StagingArea extends Component {
                         <Button outline color="warning" onClick={()=>this.props.previewResume(values)} size="lg" block>Preview <i className="fa fa-file-text"></i></Button>
                     </div>
                     <div className="col-12 col-md-3 mx-auto my-auto">
-                        <Button outline color="success" onClick={()=>this.props.createResume(values)} size="lg" block>Create <i className="fa fa-file-text"></i></Button>
+                        <Button outline color="success" onClick={(e)=>{this.props.createResume(values);}} size="lg" block>Create <i className="fa fa-file-text"></i></Button>
                     </div>
                 </div>
                 <hr/>

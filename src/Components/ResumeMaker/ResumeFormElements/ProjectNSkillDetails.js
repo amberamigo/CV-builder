@@ -6,11 +6,11 @@ class ProjectNSkillDetailsForm extends Component {
 
     fetchGitHub = (e) => {
         e.preventDefault();
-        if(this.props.values.githubid === ''){
+        if(this.props.values.github === ''){
             alert('Provide Your GitHub ID');
             return;
         }
-        const githubid = this.props.values.githubid;
+        const githubid = this.props.values.github;
         axios.get(`https://api.github.com/users/${githubid}/projects`,{
             headers : {
                 'Accept' : 'application/vnd.github.inertia-preview+json'
@@ -83,11 +83,12 @@ class ProjectNSkillDetailsForm extends Component {
                                     <Input 
                                         type = "url" 
                                         id = "githubid"
-                                        name = "githubid"
+                                        name = "github"
                                         autoComplete = "off"
+                                        autoFocus = "on"
                                         placeholder="Your GitHub UserID"
                                         aria-describedby = "githubid-text"
-                                        value = {values.isSubmitted ? '' : values.githubid}
+                                        value = {values.isSubmitted ? '' : values.github}
                                         onChange = {(e)=>handleChange(e)}
                                     />
                                     <FormText htmlFor="githubid-text">Eg.- For github.com/UserID, Enter Only 'UserID'</FormText>
@@ -101,50 +102,98 @@ class ProjectNSkillDetailsForm extends Component {
                         <Row>
                             <Col md={6}>
                                 <FormGroup>
-                                    <Label htmlFor="project_name">Project Title</Label>
+                                    <Label htmlFor="project_name_1">Project Title 1</Label>
                                     <Input 
                                         type = "text" 
-                                        id = "project_name"
-                                        name = "project_name"
-                                        autoFocus = "on"
+                                        id = "project_name_1"
+                                        name = "project_name_1"
                                         autoComplete = "off"
-                                        aria-describedby = "project_name-text"
-                                        value = {values.isSubmitted ? '' : values.project_name}
+                                        aria-describedby = "project_name_1-text"
+                                        value = {values.isSubmitted ? '' : values.project_name_1}
                                         onChange = {(e)=>handleChange(e)}
                                     />
-                                    <FormText id="project_name-text">Enter Project Title</FormText>
+                                    <FormText id="project_name_1-text">Enter Project 1 Title</FormText>
                                 </FormGroup>
                             </Col>
                         </Row>
                         <Row>
                             <Col md={6} className="mx-auto">
                                 <FormGroup>
-                                    <Label htmlFor="project_description">Description</Label>
+                                    <Label htmlFor="project_description_1">Description 1</Label>
                                     <Input 
                                         type = "text" 
-                                        id = "project_description"
-                                        name = "project_description"
+                                        id = "project_description_1"
+                                        name = "project_description_1"
                                         autoComplete = "off"
-                                        aria-describedby = "project_desc-text"
-                                        value = {values.isSubmitted ? '' : values.project_description}
+                                        aria-describedby = "project_desc_1-text"
+                                        value = {values.isSubmitted ? '' : values.project_description_1}
                                         onChange = {(e)=>handleChange(e)}
                                     />
-                                    <FormText id="edu_institute_name_1-text">Enter Project Description</FormText>
+                                    <FormText id="project_desc_1-text">Enter Project 1 Description</FormText>
                                 </FormGroup>
                             </Col>
                             <Col md={6} className="mx-auto">
                                 <FormGroup>
-                                    <Label htmlFor="project_link">Project Link</Label>
+                                    <Label htmlFor="project_link_1">Project Link 1</Label>
                                     <Input 
                                         type = "url" 
-                                        id = "project_link"
-                                        name = "project_link"
+                                        id = "project_link_1"
+                                        name = "project_link_1"
                                         autoComplete = "off"
-                                        aria-describedby = "project_link-text"
-                                        value = {values.isSubmitted ? '' : values.project_link}
+                                        aria-describedby = "project_link_1-text"
+                                        value = {values.isSubmitted ? '' : values.project_link_1}
                                         onChange = {(e)=>handleChange(e)}
                                     />
-                                    <FormText id="project_link-text">Provide Link For Project</FormText>
+                                    <FormText id="project_link_1-text">Provide Link For Project 1</FormText>
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={6}>
+                                <FormGroup>
+                                    <Label htmlFor="project_name_2">Project Title 2</Label>
+                                    <Input 
+                                        type = "text" 
+                                        id = "project_name_2"
+                                        name = "project_name_2"
+                                        autoComplete = "off"
+                                        aria-describedby = "project_name_2-text"
+                                        value = {values.isSubmitted ? '' : values.project_name_2}
+                                        onChange = {(e)=>handleChange(e)}
+                                    />
+                                    <FormText id="project_name_2-text">Enter Project 2 Title</FormText>
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={6} className="mx-auto">
+                                <FormGroup>
+                                    <Label htmlFor="project_description_2">Description 2</Label>
+                                    <Input 
+                                        type = "text" 
+                                        id = "project_description_2"
+                                        name = "project_description_2"
+                                        autoComplete = "off"
+                                        aria-describedby = "project_desc_2-text"
+                                        value = {values.isSubmitted ? '' : values.project_description_2}
+                                        onChange = {(e)=>handleChange(e)}
+                                    />
+                                    <FormText id="edu_institute_name_1-text">Enter Project 2 Description</FormText>
+                                </FormGroup>
+                            </Col>
+                            <Col md={6} className="mx-auto">
+                                <FormGroup>
+                                    <Label htmlFor="project_link_2">Project Link 2</Label>
+                                    <Input 
+                                        type = "url" 
+                                        id = "project_link_2"
+                                        name = "project_link_2"
+                                        autoComplete = "off"
+                                        aria-describedby = "project_link_2-text"
+                                        value = {values.isSubmitted ? '' : values.project_link_2}
+                                        onChange = {(e)=>handleChange(e)}
+                                    />
+                                    <FormText id="project_link_2-text">Provide Link For Project 2</FormText>
                                 </FormGroup>
                             </Col>
                         </Row>
@@ -190,7 +239,7 @@ class ProjectNSkillDetailsForm extends Component {
                             </Col>
                         </Row>
                         <Row>
-                            <Col md={6}>
+                            <Col className="mx-auto">
                                 <FormGroup>
                                     <Label htmlFor="skills_name_3">Skill - 3</Label>
                                     <Input 
@@ -203,6 +252,21 @@ class ProjectNSkillDetailsForm extends Component {
                                         onChange = {(e)=>handleChange(e)}
                                     />
                                     <FormText id="skills_name_3-text">Enter Skill - 3</FormText>
+                                </FormGroup>
+                            </Col>
+                            <Col className="mx-auto">
+                                <FormGroup>
+                                    <Label htmlFor="skills_name_4">Skill - 4</Label>
+                                    <Input 
+                                        type = "text" 
+                                        id = "skills_name_4"
+                                        name = "skills_name_4"
+                                        autoComplete = "off"
+                                        aria-describedby = "skills_name_4-text"
+                                        value = {values.isSubmitted ? '' : values.skills_name_4}
+                                        onChange = {(e)=>handleChange(e)}
+                                    />
+                                    <FormText id="skills_name_4-text">Enter Skill - 4</FormText>
                                 </FormGroup>
                             </Col>
                         </Row>

@@ -42,7 +42,7 @@ export default compose(
         { 
             collection : 'resumes', 
             where : [['authorID', '==' , `${props.auth.uid}`]],
-            limit : 10,
+            limit : 8,
             storeAs : 'usersResume'
         }
     ])

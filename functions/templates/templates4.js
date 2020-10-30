@@ -2633,10 +2633,10 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row"><h3 class="text-center">${skills_name_1}</h3></td>
-                                                <td scope="row"><h3 class="text-center">${skills_name_2}</h3></td>
-                                                <td scope="row"><h3 class="text-center">${skills_name_3}</h3></td>
-                                                <td scope="row"><h3 class="text-center">${skills_name_4}</h3></td>
+                                                <td scope="row"><h3 class="font-weight-bolder">${skills_name_1}</h3></td>
+                                                <td scope="row"><h3 class="font-weight-bolder">${skills_name_2}</h3></td>
+                                                <td scope="row"><h3 class="font-weight-bolder">${skills_name_3}</h3></td>
+                                                <td scope="row"><h3 class="font-weight-bolder">${skills_name_4}</h3></td>
                                             </tr>
                                             <tr>
                                                 <td scope="row"></td>
@@ -2655,9 +2655,9 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row"><h3 class="text-center">${areas_of_interest_1}</h3></td>
+                                                <td scope="row"><h3 class="font-weight-bolder">${areas_of_interest_1}</h3></td>
                                                 <td scope="row"></td>
-                                                <td scope="row"><h3 class="text-center">${areas_of_interest_2}</h3></td>
+                                                <td scope="row"><h3 class="font-weight-bolder">${areas_of_interest_2}</h3></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>
@@ -2677,9 +2677,9 @@ exports.tmpl4 = ({ name, email, phone, linkedin, address, github,
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row"><h3 class="text-center">${achievements_1}</h3></td>
+                                                <td scope="row"><h3 class="font-weight-bolder">${achievements_1}</h3></td>
                                                 <td scope="row"></td>
-                                                <td scope="row"><h3 class="text-center">${achievements_2}</h3></td>
+                                                <td scope="row"><h3 class="font-weight-bolder">${achievements_2}</h3></td>
                                                 <td scope="row"></td>
                                             </tr>
                                             <tr>

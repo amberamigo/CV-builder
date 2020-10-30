@@ -1,0 +1,12 @@
+.rescard {
+    border-radius: 1px;
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.5s;
+    will-change: transform;
+    border: 5px solid #002266;
+    margin: 1rem;
+  }
+  
+.rescard:hover {
+    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+}

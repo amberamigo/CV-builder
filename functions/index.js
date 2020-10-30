@@ -21,7 +21,27 @@ app.use(cors());
 app.post('/previewResume', (request, response)=>{
     try{
         if(request.body.templateNumber){
-            const htmlFilePreview = tmpl4(request.body);
+            var htmlFilePreview = '';
+            switch(request.body.templateNumber){
+                case 1 : 
+                    htmlFilePreview = tmpl1(request.body);
+                    break;
+                
+                case 2 : 
+                    htmlFilePreview = tmpl2(request.body);
+                    break;
+                
+                case 3 : 
+                    htmlFilePreview = tmpl3(request.body);
+                    break;
+                
+                case 4 : 
+                    htmlFilePreview = tmpl4(request.body);
+                    break;
+                
+                default : 
+                    htmlFilePreview = '<html><head></head><body><h1> Oops Its Not You, Its A Server Error :/ </h1></body></html';
+            }
             response.contentType('text/html');
             response.statusCode = 200;
             response.send(htmlFilePreview);
@@ -38,8 +58,28 @@ app.post('/previewResume', (request, response)=>{
 app.post('/', (request, response) => {
     try{
         if(request.body.templateNumber){
-            const htmlFile = tmpl4(request.body);
-            htmlPdf.create(htmlFile).toStream((err, Stream)=>{
+            var htmlFilePreview = '';
+            switch(request.body.templateNumber){
+                case 1 : 
+                    htmlFilePreview = tmpl1(request.body);
+                    break;
+                
+                case 2 : 
+                    htmlFilePreview = tmpl2(request.body);
+                    break;
+                
+                case 3 : 
+                    htmlFilePreview = tmpl3(request.body);
+                    break;
+                
+                case 4 : 
+                    htmlFilePreview = tmpl4(request.body);
+                    break;
+                
+                default : 
+                    htmlFilePreview = '<html><head></head><body><h1> Oops Its Not You, Its A Server Error :/ </h1></body></html';
+            }
+            htmlPdf.create(htmlFilePreview).toStream((err, Stream)=>{
                 if(err){
                     throw new Error('Error In Creating PDF');
                 }else{
