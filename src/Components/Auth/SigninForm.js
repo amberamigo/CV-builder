@@ -17,6 +17,8 @@ import MessageDisplay from '../Layout/MessageDisplay';
 import { Redirect, Link } from 'react-router-dom';
 
 
+// SignIn Page Component with SignIn Methods and Forms
+
 class SigninForm extends Component {
 
     constructor(props){

@@ -8,6 +8,10 @@ import { NavLink } from 'react-router-dom';
 import { connect } from "react-redux";
 import { signOut } from '../../Store/actions/authActions';
 
+
+//Signed In Links for Navigation Bar
+
+
 const SignedIn = (props) => {
 
     const { profile } = props;

@@ -13,6 +13,8 @@ import { createFirestoreInstance } from 'redux-firestore';
 import { getFirebase, ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import firebase from './Config/fireConfig';
 
+// Starting Point of React Single Page Application
+
 const initialState = {}
 
 const store = createStore(rootReducers, initialState,
@@ -20,6 +22,8 @@ const store = createStore(rootReducers, initialState,
     applyMiddleware(thunk.withExtraArgument({getFirebase}))
   )
 );
+
+// Configuring Redux Store
 
 const rrfProps = {
   firebase,
@@ -31,6 +35,7 @@ const rrfProps = {
   createFirestoreInstance
 }
 
+//Main Rendering
 
 ReactDOM.render(
   <React.StrictMode>

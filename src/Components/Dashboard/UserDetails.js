@@ -5,6 +5,8 @@ import { Card, CardImg, Row, Col, CardBody, CardText, Badge } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+//User Details Component for showing Details of Logged in User
+
 class UserDetails extends Component {
 
     render() {

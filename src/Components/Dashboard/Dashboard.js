@@ -6,6 +6,8 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
 
+//Dashboard where users find there created resumes
+
 class Dashboard extends Component {
     render() {
         const { resume, auth } = this.props;

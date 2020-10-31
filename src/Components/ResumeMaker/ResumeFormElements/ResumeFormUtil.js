@@ -9,6 +9,9 @@ import StagingArea from './StagingArea';
 import ResumeScrapForm from './ResumeScrapForm';
 import { FadeTransform } from 'react-animation-components';
 
+
+//Main Utility Form Component for Resume Maker
+
 class ResumeFormUtil extends Component {
 
     constructor(props){

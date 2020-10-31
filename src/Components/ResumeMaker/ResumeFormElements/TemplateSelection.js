@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Label, Input, Card, CardBody, CardImg, CardDeck, CardFooter } from 'reactstrap';
 
+
+//Template Selection Form Component 
+
 class TemplateSelectionForm extends Component {
 
     toNextStep = (e) => {

@@ -6,6 +6,10 @@ import {
     } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
+
+//Signed Out Links for Navigation Bar
+
+
 const SignedOut = (props) => {
 
     const [tooltip1Open, setTooltip1Open] = useState(false);

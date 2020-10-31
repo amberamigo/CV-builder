@@ -3,6 +3,9 @@ import { Button, Table } from 'reactstrap';
 import { createResume, previewResume } from '../../../Store/actions/resumeActions';
 import { connect } from 'react-redux';
 
+
+// Staging Area for collected user details 
+
 class StagingArea extends Component {
 
     toNextStep = (e) => {

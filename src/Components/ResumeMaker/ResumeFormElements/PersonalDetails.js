@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Label, Input, InputGroup, InputGroupAddon, InputGroupText,  FormText, Button, Row, Col } from 'reactstrap';
 
+
+//Child Form Component for Personal Details
+
 class PersonalDetailsForm extends Component {
 
     toNextStep = (e) => {

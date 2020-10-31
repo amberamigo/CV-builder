@@ -3,6 +3,10 @@ import { Card, CardText, CardDeck, CardImg, Col, Row, Badge } from 'reactstrap';
 import ResumeCard from '../Layout/ResumeCard'; 
 import { Link } from 'react-router-dom';
 
+
+//Component for Rendering List of Resumes on dashboard
+
+
 const ResumeList = (props) => {
     const resumes = props.resume;
     if(resumes.length>0){

@@ -11,6 +11,9 @@ import { Card, CardTitle, CardText, Button } from 'reactstrap';
 
 
 
+// Resume Details Component for showing details for created resume
+
+
 const ResumeDetails = (props) => {
 
     const { resume, auth } = props;

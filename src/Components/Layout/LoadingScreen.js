@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, Spinner} from 'reactstrap';
 
+// Basic Loading Screen For Main Layout
+
 const LoadingScreen = () => {
     return (
         <div className="container text-center">

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Form, FormGroup, Label, Input,  FormText, Button, Row, Col } from 'reactstrap';
 
+//Project details form component
 class ProjectNSkillDetailsForm extends Component {
 
     fetchGitHub = (e) => {

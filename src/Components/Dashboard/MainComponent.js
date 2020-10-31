@@ -1,5 +1,7 @@
 import React from 'react';
 
+//Functional Component for Main Landing Page 
+
 const MainComponent = () => {
     return (
         <div>

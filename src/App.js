@@ -10,6 +10,8 @@ import SigninForm from './Components/Auth/SigninForm';
 import SignupForm from './Components/Auth/SignupForm';
 import ResumeForm from './Components/ResumeMaker/ResumeForm';
 
+//Application Component with Different Routes
+
 class App extends React.Component {
   render(){
     return (

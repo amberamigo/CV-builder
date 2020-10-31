@@ -4,6 +4,9 @@ import { createResume } from '../../Store/actions/resumeActions';
 import { connect } from 'react-redux'; 
 import { Redirect } from 'react-router-dom';
 
+
+// Resume Form Start Component for Rendering Resume Form Children
+
 class ResumeForm extends Component {
 
     render() {

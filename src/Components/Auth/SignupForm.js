@@ -16,6 +16,8 @@ import { signUp, signInGoogle, signInGithub, signInFacebook } from '../../Store/
 import { Redirect,Link } from 'react-router-dom';
 import MessageDisplay from '../Layout/MessageDisplay';
 
+//SignUp Component with SignUp Methods and Forms
+
 class SignupForm extends Component {
 
     constructor(props){

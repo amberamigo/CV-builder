@@ -5,6 +5,8 @@ import { Redirect } from 'react-router-dom';
 import { verifyEmailLink } from '../../Store/actions/authActions';
 import MessageDisplay from '../Layout/MessageDisplay';
 
+//Email Verification Notification
+
 class VerifyEmail extends Component {
 
     handleSubmit = (e) => {

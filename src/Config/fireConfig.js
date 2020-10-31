@@ -17,3 +17,5 @@ firebase.initializeApp(firebaseConfig);
 firebase.firestore();
 
 export default firebase;
+
+//Firebase Configuration For Project

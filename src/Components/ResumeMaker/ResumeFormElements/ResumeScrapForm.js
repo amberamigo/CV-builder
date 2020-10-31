@@ -4,6 +4,10 @@ import { Form, FormGroup, CustomInput, Label, Button, Progress, Spinner } from '
 import MessageDisplay from '../../Layout/MessageDisplay';
 import { UploadURL, ExtractData } from '../../../Config/commonurls';
 
+
+//Resume Scrapping Stage Component
+
+
 const ResumeScrapForm = (props) => {
 
     const [file, setFile] = useState();

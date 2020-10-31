@@ -1,5 +1,9 @@
 //import fb from '../../Config/fireConfig'; 
 
+// Functions related to Authentication Processes
+
+
+//SignIngoogle
 export const signInGoogle = () => {
     return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
@@ -20,6 +24,8 @@ export const signInGoogle = () => {
     }
 }
 
+
+//signingithub
 export const signInGithub = () => {
     return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
@@ -40,6 +46,8 @@ export const signInGithub = () => {
     }
 }
 
+
+//signinfacebook
 export const signInFacebook = () => {
     return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
@@ -60,6 +68,8 @@ export const signInFacebook = () => {
     }
 }
 
+
+//signinwithemailandpassword
 export const signIn = (credentials) => {
     return (dispatch, getState, {getFirebase})=>{
         const firebase = getFirebase();
@@ -73,6 +83,8 @@ export const signIn = (credentials) => {
     }
 }
 
+
+//signout
 export const signOut = ()=>{
     return (dispatch, getState, {getFirebase})=>{
         const firebase = getFirebase();
@@ -86,6 +98,8 @@ export const signOut = ()=>{
     }
 }
 
+
+//signup function
 export const signUp = (newUser) => {
     return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
@@ -105,6 +119,8 @@ export const signUp = (newUser) => {
     }
 }
 
+
+//send email for verification
 export const verifyEmailLink = () => {
     return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();
@@ -121,6 +137,8 @@ export const verifyEmailLink = () => {
     }
 }
 
+
+//forgot password link
 export const passwordResetLink = (emailId) => {
     return (dispatch, getState, { getFirebase }) => {
         const firebase = getFirebase();

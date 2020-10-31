@@ -1,5 +1,7 @@
 const initState = {}
 
+// Different State Reducers for authentication
+
 const authReducer = (state = initState, action) => {
     switch(action.type){
         case 'LOGIN_ERR' : 

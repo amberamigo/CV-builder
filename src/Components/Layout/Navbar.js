@@ -12,6 +12,10 @@ import SignedIn from './SignedIn';
 import SignedOut from './SignedOut';
 import { connect } from 'react-redux';
 
+
+// Main Navigation Bar Component
+
+
 const NavBar = (props)=>{
     const { auth } = props;
     const links = auth.uid ? <SignedIn/> : <SignedOut/> ; 

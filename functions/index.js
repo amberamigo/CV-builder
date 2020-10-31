@@ -7,13 +7,7 @@ const tmpl2 = require('./templates/templates2').tmpl2;
 const tmpl3 = require('./templates/templates3').tmpl3;
 const tmpl4 = require('./templates/templates4').tmpl4;
 
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-// //
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//     response.send("Hello from React Resume Maker");
-// });
+//Cloud Functions for resume creation and preview are defined here...
 
 const app = express();
 app.use(cors());
@@ -130,3 +124,11 @@ app.post('/', (request, response) => {
 });
 
 exports.createResume = functions.https.onRequest(app);
+
+
+// // Create and Deploy Your First Cloud Functions
+// // https://firebase.google.com/docs/functions/write-firebase-functions
+// //
+// exports.helloWorld = functions.https.onRequest((request, response) => {
+//     response.send("Hello from React Resume Maker");
+// });

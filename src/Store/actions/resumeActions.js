@@ -3,6 +3,10 @@ import { Template1 } from '../../Config/commonurls';
 const axios = require('axios').default;
 const saveAs = require('file-saver');
 
+//Functions related to resume creation
+
+
+//function for calling main createResume
 export const createResume = (values)=>{
     return (dispatch, getState, {getFirebase})=>{
         //call to database
@@ -73,6 +77,8 @@ export const createResume = (values)=>{
     }
 };
 
+
+//function for calling preview resume
 export const previewResume = (values) => {
     return (dispatch, getState, { getFirebase }) => {
         dispatch({ type : 'RESUME_LOADING'});

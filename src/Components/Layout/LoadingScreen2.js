@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, Spinner} from 'reactstrap';
 
+// Loading Screen For Resume Preview 
+
 const LoadingScreen2 = () => {
     return (
         <div className="container text-center">
