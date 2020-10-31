@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, FormGroup, Label, Input, Card, CardBody, CardImg, CardDeck, CardText } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Card, CardBody, CardImg, CardDeck, CardFooter } from 'reactstrap';
 
 class TemplateSelectionForm extends Component {
 
@@ -50,29 +50,30 @@ class TemplateSelectionForm extends Component {
                             />
                         </FormGroup>
                         <FormGroup>
+                            <Label>Select Template</Label>
                             <CardDeck>
                                 <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{if(values.title===''){return;}  selectTemplate(1); this.toNextStep(e);}}>
-                                    <CardImg src="public/logo192.png" alt="Template Image"/>
+                                    <CardImg src="/assets/Beginner_A.png" alt="Template Image"/>
                                     <CardBody>
-                                        <CardText>Template 1</CardText>
+                                        <CardFooter>Beginner A</CardFooter>
                                     </CardBody>
                                 </Card>
                                 <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{if(values.title===''){return;} selectTemplate(2); this.toNextStep(e);}}>
-                                    <CardImg src="public/logo192.png" alt="Template Image"/>
+                                    <CardImg src="/assets/Professional_A.png" alt="Template Image"/>
                                     <CardBody>
-                                        <CardText>Template 2</CardText>
+                                        <CardFooter>Professional A</CardFooter>
                                     </CardBody>
                                 </Card>
                                 <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{if(values.title===''){return;} selectTemplate(3); this.toNextStep(e);}}>
-                                    <CardImg src="public/logo192.png" alt="Template Image"/>
+                                    <CardImg src="/assets/Professional_B.png" alt="Template Image"/>
                                     <CardBody>
-                                        <CardText>Template 3</CardText>
+                                        <CardFooter>Professional B</CardFooter>
                                     </CardBody>
                                 </Card>
                                 <Card style={{cursor : 'pointer'}} outline color="primary" onClick={(e)=>{if(values.title===''){return;} selectTemplate(4); this.toNextStep(e);}}>
-                                    <CardImg src="public/logo192.png" alt="Template Image"/>
+                                    <CardImg src="/assets/Professional_C.png" alt="Template Image"/>
                                     <CardBody>
-                                        <CardText>Template 4</CardText>
+                                        <CardFooter>Professional C</CardFooter>
                                     </CardBody>
                                 </Card>
                             </CardDeck>

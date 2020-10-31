@@ -39,6 +39,22 @@ app.post('/previewResume', (request, response)=>{
                     htmlFilePreview = tmpl4(request.body);
                     break;
                 
+                case "1" : 
+                    htmlFilePreview = tmpl1(request.body);
+                    break;
+                
+                case "2" : 
+                    htmlFilePreview = tmpl2(request.body);
+                    break;
+                
+                case "3" : 
+                    htmlFilePreview = tmpl3(request.body);
+                    break;
+                
+                case "4" : 
+                    htmlFilePreview = tmpl4(request.body);
+                    break;
+
                 default : 
                     htmlFilePreview = '<html><head></head><body><h1> Oops Its Not You, Its A Server Error :/ </h1></body></html';
             }
@@ -73,6 +89,22 @@ app.post('/', (request, response) => {
                     break;
                 
                 case 4 : 
+                    htmlFilePreview = tmpl4(request.body);
+                    break;
+                
+                case "1" : 
+                    htmlFilePreview = tmpl1(request.body);
+                    break;
+                
+                case "2" : 
+                    htmlFilePreview = tmpl2(request.body);
+                    break;
+                
+                case "3" : 
+                    htmlFilePreview = tmpl3(request.body);
+                    break;
+                
+                case "4" : 
                     htmlFilePreview = tmpl4(request.body);
                     break;
                 

@@ -251,6 +251,7 @@ class ResumeFormUtil extends Component {
         
                             <StagingArea
                                 values={this.state}
+                                changeValue={this.changeValue}
                                 nextStep={this.nextStep}
                                 prevStep={this.prevStep}
                             />

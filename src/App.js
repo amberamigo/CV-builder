@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavBar from './Components/Layout/Navbar';
 import Dashboard from './Components/Dashboard/Dashboard';
+import MainComponent from './Components/Dashboard/MainComponent';
 import UserDetails from './Components/Dashboard/UserDetails';
 import VerifyEmail from './Components/Dashboard/VerifyEmail';
 import ResumeDetails from './Components/ResumeMaker/ResumeDetails';
@@ -16,9 +17,8 @@ class App extends React.Component {
         <div className="App">
           <NavBar/>
           <br/>
-          <br/>
-          <br/>
               <Switch>
+                <Route exact path="/" component={MainComponent} />
                 <Route exact path="/dashboard" component={Dashboard}/>
                 <Route path="/resume/:id" component={ResumeDetails}/>
                 <Route path="/user" component={UserDetails}/>

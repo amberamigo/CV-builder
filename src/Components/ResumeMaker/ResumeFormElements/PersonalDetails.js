@@ -92,7 +92,7 @@ class PersonalDetailsForm extends Component {
                                         value = {values.isSubmitted ? '' : values.address}
                                         onChange = {(e)=>handleChange(e)}
                                     />
-                                    <FormText id="address-text">Enter Address</FormText>
+                                    <FormText id="address-text">Enter Address (Keep It Short And Simple, Like Delhi, India)</FormText>
                                 </FormGroup>
                             </Col>
                             <Col>

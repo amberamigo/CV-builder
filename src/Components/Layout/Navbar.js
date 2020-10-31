@@ -19,7 +19,7 @@ const NavBar = (props)=>{
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     return (
-        <div>
+        <div style={{marginBottom:50}}>
           <Navbar className="nvbr" fixed="top" expand="md">
             <NavbarBrand href="/">
               <img src={process.env.PUBLIC_URL + '/BrandLogo4.png'} style={{height:40, width:120}} alt="Logo"></img>

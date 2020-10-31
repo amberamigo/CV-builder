@@ -14,6 +14,13 @@ class StagingArea extends Component {
         e.preventDefault();
         this.props.prevStep();
     }
+
+    componentDidMount(){
+        
+        this.props.changeValue('github','github.com/'+this.props.values.github);
+        this.props.changeValue('linkedin','in.linkedin.com/'+this.props.values.linkedin);
+    }
+
     render() {
 
         const { values } = this.props;

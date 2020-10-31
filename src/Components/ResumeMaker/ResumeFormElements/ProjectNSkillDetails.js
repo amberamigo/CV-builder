@@ -22,19 +22,19 @@ class ProjectNSkillDetailsForm extends Component {
                     const date = new Date(resp.data[0].created_at).toDateString();
                     const e1 = {
                         target : {
-                            name : 'project_name',
+                            name : 'project_name_1',
                             value : resp.data[0].name
                         }
                     }
                     const e2 = {
                         target : {
-                            name : 'project_description',
+                            name : 'project_description_1',
                             value : 'Created On '+date
                         }
                     }
                     const e3 = {
                         target : {
-                            name : 'project_link',
+                            name : 'project_link_1',
                             value : resp.data[0].html_url
                         }
                     }
